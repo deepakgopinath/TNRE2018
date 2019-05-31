@@ -1,0 +1,251 @@
+% Copyright Javier Sánchez-Monedero.
+% Please report bugs and suggestions to (jsanchezm at uco.es)
+%
+% This document is released under a Creative Commons Licence 
+% CC-BY-SA (http://creativecommons.org/licenses/by-sa/3.0/) 
+%
+% BASIC INSTRUCTIONS: 
+% 1. Load and set up proper language packages
+% 2. Complete the paper data commands
+% 3. Use commands \rcomment and \newtext as shown in the example
+
+\documentclass[a4paper,twoside,11pt]{reviewresponse}
+
+% 1. Load and set up proper language packages
+%\usepackage[utf8x]{inputenc}
+\usepackage[latin9]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}  % assumes amsmath package installed
+
+% 2. Complete the paper data
+\newcommand{\myAuthors}{{Deepak E. Gopinath$^{\displaystyle 1, 3}$, ~Brenna D. Argall$^{\displaystyle 1,2,3}$, }}
+\newcommand{\myAuthorsShort}{John.~Doe et. al}
+\newcommand{\myEmail}{deepak.gopinath@u.northwestern.edu}
+\newcommand{\myTitle}{Active Intent Disambiguation for Shared Autonomy Robots - Response to Reviewers}
+\newcommand{\myShortTitle}{Response to reviewers}
+\newcommand{\myJournal}{Transactions on Neural Systems and Rehabilitation Engineering}
+\newcommand{\myDept}{{$^{\displaystyle 1}$Department of Mechanical Engineering, Northwestern University, Evanston, IL}\\
+{$^{\displaystyle 2}$ Departments of Computer Science and Physical Medicine and Rehabilitation, Northwestern University, Evanston, IL  }\\
+{$^{\displaystyle 3}$ Shirley Ryan AbilityLab, Chicago, IL }\\}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\usepackage[linktoc=all]{hyperref}
+\usepackage[linktoc=all,bookmarks,bookmarksopen=true,bookmarksnumbered=true]{hyperref}
+
+\hypersetup{
+pdfauthor = {\myAuthorsShort},
+pdftitle = {\myTitle},
+pdfsubject = {\myJournal\xspace},
+colorlinks = true,
+linkcolor=black!70!green,          % color of internal links
+citecolor=black!70!green,        % color of links to bibliography
+filecolor=magenta,      % color of file links
+urlcolor=black!70!green           % color of external links
+}
+
+\begin{document}
+
+\thispagestyle{plain}
+
+\begin{center}
+ {\LARGE\myTitle} \vspace{0.5cm} \\
+ {\large\myJournal} \vspace{0.5cm} \\
+ \today \vspace{0.5cm} \\
+ \myAuthors \\
+ \url{\myEmail} \vspace{1cm} \\
+ \myDept
+\end{center}
+
+%\tableofcontents
+
+%\begin{abstract}
+We sincerely thank the reviewers for their valuable efforts and constructive feedback. We have made every effort to address all the major points raised by the reviewers and have modified the manuscript accordingly. For added ease of reading, we are also submitting a version of the revised manuscript in which the modifications are highlighted in \newtext{blue color}. Detailed responses to the comments follow.  
+%\end{abstract}
+
+\section{Reviewer 1}
+
+\rcomment{
+``...the mathematical formalism presented in Sections III and IV is less exemplified/detailed in the methods section...'' ``...the method section usually includes enough details allowing experiment reproduction...''
+}
+
+\textbf{Response}
+
+We thank the reviewer for this comment into account and we have added new text in the methods section which clarifies how the algorithms presented in Section III and IV for intent disambiguation and intent inference respectively are being used during the experiment. Furthermore, we have added a flowchart diagram which outlines what happens during a single study trial. We hope that this will make the connection between the algorithms presented and the study methods more clear.
+%We thank the Reviewer for the positive comments about our work and manuscript. Below, we address every comment carefully and explain the corresponding changes in the manuscript.
+
+\rcomment{
+How the probability distribution associated to each goal was defined/computed for the pilot study (evt. reference) and how short-term changes and long-term changes are regarded relative to the duration of the testing trials.
+}
+
+\textbf{Response}
+
+The probability distribution associated with each goal is updated using the DFT-based intent inference algorithm introduced in Section IV. Equation 6 is invoked at every time step (\textit{UpdateIntent()} in Algorithm 1) to update the belief over goals in an online manner until the trial ended. At the start of each trial the probability distribution over goals was initialized as a uniform probability distribution. We acknowledge that we did not explicitly state this in the methods section and have modified the text accordingly.
+
+\rcomment{
+	Please provide a diagram or table explaining all the phases of one example of a testing trial
+}
+
+\textbf{Response}
+
+We thank the reviewer for this valuable suggestion. After careful thought, we have decided to incorporate a \textit{flowchart} type diagram to capture how the subject acts during a single trial. In essence, the subject can perform two types of actions: either a velocity control command issued via the interface or a button press (for either manual mode switch or a disambiguation request). This process is repeated over and over again until the goal is reached. What algorithms get invoked when is captured in this flowchart as well. We hope that this will add to the clarity and enable the reader to better comprehend what happens during a trial. 
+
+\rcomment{
+	 Were any errors eventually corrected during trials using manual switch of control mode (is this experimental) 
+	 
+	 Were any eventual errors given by the disambiguation switch corrected by the manual mode and if positive is there any data available regarding these errors. 
+}
+\textbf{Response}
+
+The point raised by the reviewer is an important one.  In our humble opinion the notion of an error is in how the user \textit{perceives} the control mode chosen by the algorithm. As we have mentioned in the manuscript, when the user operated the robot under the \textit{disambiguation} condition, they were still free to use manual mode switches at any time during the trial. Some users might have had a better understanding of why the disambiguation algorithm chose a specific control mode and thereby would leverage it for their own benefit. So, in essence, if the user felt that the algorithm computed an erroneous mode they had the freedom to switch modes. Although the mode chosen by the algorithm had the potential to be a good mode, for it to be used properly the users need to have a better idea of how the autonomy utilizes their actions for assistive purposes, pointing to the need for better training in these types experiments for improved transparency. We highlight the above-mentioned point in the discussion section. Users exhibited different types of behavior and we have included a plot which shows how two users chose to interact with the robot in completely different fashions (Figure 7).
+\rcomment{
+	Any possible evaluation of performance of intent inference algorithm. 
+}
+\textbf{Response}
+
+We have taken this suggestion into account and have added an illustrative example (Figure 1) of a qualitative comparison of our DFT-based intent inference scheme to a memory-based Bayesian prediction scheme and a recursive Bayesian belief update scheme. This example illustrates some of the fundamental differences in how the goal probabilities evolve under different inference schemes. One of the defining characteristics of the DFT-based scheme is the smoothness with which the probabilities evolve and as a result it is robust to noise and can likely eliminate false positives. 
+
+
+In the following, I will address the specific comments in detail. 
+
+\rcomment{
+	P4-L38-C1 Is there any similarity between activation field from DFT and the time evolution of the probability distribution. 
+}
+\textbf{Response}
+
+We have clarified the text and have presented a more detailed primer on some of the core concepts of dynamic field theory before we introduce how we have adapted it the ideas for the purpose of intent inference. We sincerely hope that this will resolve the confusion. 
+
+\rcomment{
+	P4-L42-C2  How close are human and autonomy signals...
+}
+\textbf{Response}
+
+We thank the reviewer in pointing out this lack of clarity. By closeness, we meant similarity (in the sense of dot product, cosine similarity) and we have made this explicit in the text.
+\rcomment{
+P4-L45-C2 (equation dimension i of function encoding nonlinearity?)  is directness dependent only on the human signal and space .. What dimension (e.g. measure units) have the human and autonomy signals. 
+}
+\textbf{Response}
+
+For the purposes of computing $\boldsymbol{\xi}_i$,  both $\boldsymbol{u}_h^{trans}$ and $\boldsymbol{x}_r^{trans}$ are treated as vectors in Euclidean space $\mathbb{R}^3$. Therefore, dot products can be directly evaluated. This dot product captures the how aligned the instantaneous velocity vector is to the straight line path connecting the current position of the end effector and the goal. Both human and autonomy signals are measure in $m/s$, however the exact units don't play a role in computing the similarity measure. 
+
+\rcomment{
+	P5-L11-C2 how the user chose between manual switch and disambiguation request...can one say that the user requested disambiguation assistance when not knowing what to choose from the control mode list...why was the disambiguation paradigm including both manual and disambiguation switch...
+}
+
+\textbf{Response}
+
+During the study there were two types of trials: one in which ONLY manual mode switches were used and the other in which alongside manual mode switches the user had to activate the disambiguation system at least once and was required to move the robot in the mode that was selected by the algorithm for as long as they felt comfortable. We provided the option of manual mode switch in the disambiguation paradigm because we wanted to keep the trials as flexible as possible. The text describing the experimental protocol has been modified to make this point more clear. At the beginning of the study session, we had also explained in words to the subject what the disambiguation request did. We mentioned that upon a disambiguation request the autonomy will select a control mode for the user that it (the autonomy) thinks will enable it help the user even more. There could be a number of reasons why a person chose to issue a disambiguation request at a specific point in time and we believe that reasoning about that is beyond the scope of the present study. 
+
+\rcomment{
+	``... if the system can provide the optimal mode why not let the trial run entirely on system ability to provide the optimal mode...''
+	
+	
+}
+\textbf{Response}
+
+The notion of an automated mode switching scheme is an exciting one and we agree that the reviewer has raised an important point. However, having the algorithm automatically pick the optimal mode adds other complications such as, when to switch modes and how to alert the user of an upcoming mode switch. This would require evaluations which we think are beyond the scope of this study. In the present study we are only interested in \textit{which} mode to select and we opt for those modes that will improve the legibility of user intent. 
+
+\rcomment{
+P5-L19-C2 How this sentence must be interpreted: ?We used a blending-based shared-control paradigm in which the final robot control command was a linear composition of the human control command and an autonomous robot policy.' In my interpretation if the user initiates a command than the system takes over and alters this command according to the implemented algorithms (taking into consideration the sentence following the cited sentence)
+}
+
+\textbf{Response}
+
+We acknowledge that some of the text in the paper was slightly misleading and might have caused some misinterpretations for the reviewer. We would like to emphasize that at all times, the final control command issued was a \textbf{blended} command composed of the human control command and the autonomy's control command (generated using a potential field). That is, at no point does the autonomy completely take over control. The proposed algorithm only affects the control mode of operation and is invoked at the user's discretion (both for manual mode switch as well as a disambiguation request). We have added more clarity to the text to address this confusion. 
+
+\rcomment{
+P8-L19-C1 Is there data available regarding the statement ?One observation from our subject study was how often participants submitted a disambiguation request and then chose not to operate in the selected mode effectively not letting the robot help them?
+}
+
+\textbf{Response}
+
+We have taken this suggestion and accordingly added Figure 7 which shows how different participants chose to interact with the robot. Two contrasting examples of how users interacted with the robot are presented in the added figure. 
+
+\rcomment{
+P5-L35-C1 was selection of modes sequential in a certain predefined order or in a preferential order .. 
+
+P6L40-45-C1 something is mentioned about randomization..has the list of modes been randomized as well.
+
+P5-L45-C1 were the trials time limited or they continued until the goal was reached...same for P6-L45-C1 how long were the testing trials. 
+}
+
+\textbf{Response}
+
+We realize that some of the text we used in the paper did not clarify the points raised by the reviewer. We have added content and revised the text to address these points. The control space partitions were pre-defined, and the user could select any control mode at any time in any order. Details regarding the task times have also been added to the text. 
+%\begin{quotation}\noindent
+%Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an \newtext{unknown printer} took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s \newtext{the release of Letraset sheets containing Lorem Ipsum passages}, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+%\end{quotation} 
+
+\clearpage
+
+\section{Reviewer 2}
+
+\rcomment{
+	``...It may be impractical to rely on people with severe motor impairments to provide extra efforts for intent disambiguation, which may bring extra mental and physical burden to the users. In the results of the paper, it showed that some users determined to not use the switch mode to disambiguate intent due to the required task efforts...''
+}
+
+\textbf{Response}
+
+We thank the reviewer for raising this important point. It is true that some users determined not to use the control mode selected by the algorithm, however we respectfully disagree with the reviewer that it was due to the required task effort. The system was designed in a such a way that a manual mode switch and a disambiguation request both required the same amount of task effort (a button press using the same modality). We would argue the task effort is the same to manually switch modes or to request a disambiguated control mode. However, the likely reason (and we expand on this in the discussion section) that a user chose not to use the selected mode is due to lack of understanding of \textit{why} the autonomy picked that particular mode and this points to a lack of transparency (which we are addressing in our current work) possibly due to limited training time. 
+
+\rcomment{
+	``helping robot help people'' from Dr. Srini?s article may not be suitable here as that work is crowdsourcing abled people?s help/training samples to improve robot performance,
+}
+
+\textbf{Response}
+
+We thank the reviewer for pointing this out and have accordingly removed the reference to avoid any potential confusion. 
+
+\rcomment{
+	``...additional information dimensionality for disambiguation is collected implicitly and/or unobtrusively from users, for example, using EMG or human expression, but may not be explicit action mode switch..''
+}
+
+\textbf{Response}
+
+The reviewer's idea of augmenting the input mechanism with multiple modalities such as EMGs, face and gesture recognition systems is an exciting one, but it is our position that that by adding more sensors and input modalities we would, in fact, be moving away from what is considered normal day-to-day usage of these assistive devices, thereby making it more obtrusive for the user. We deliberately chose the same modality for both manual mode switch and a disambiguation request (button presses) so that the user doesn't have to expend more energy than usual to leverage the proposed algorithm's benefits. 
+
+On the other hand, automated mode switching (when done right) can likely reduce the physical effort significantly, however there are other issues that need to be dealt with such as a) knowing when to switch modes and b) design of alert paradigms to alert the user of an upcoming automated mode switch. Due to these reasons, we think that automated mode switch is currently beyond the scope of the current paper. We would argue that, what we have introduced is an algorithm to evaluate the potential usefulness of the control modes. That is, \textbf{if} we were to have a automated mode switching scheme, which one of the modes should be selected at any given time and in this work we suggest that it should be according to their usefulness to autonomy (in terms of legibility of user intent).
+
+\rcomment{
+``For the purpose of disambiguating intent inference, is there a specific reason to start from joystick only? Would it make more sense to start from using both modalities...''
+}
+
+\textbf{Response}
+
+We acknowledge that this is an interested idea. Although the study presented in the paper is done on control subjects the end-user population for these assistive systems are motor-impaired people with high spinal cord injuries (SCI). The control interface that an SCI subject uses for robot operation is typically determined by the level of injury. For that purpose, we work with occupational therapists to decide what the subject's best option is. It is very rarely the case that a subject uses multiple modalities at once in their day-to-day use. Joysticks, head arrays and sip-n-puff devices are the most commonly used interfaces for robotic arms and wheelchair use. The idea presented by the reviewer is exciting, however, we wanted to stay as close as possible to the real-world use-case scenario so that the transition from the confines of a lab into the real world setting is much more smoother; which is why we use only a single modality during each trial. 
+
+\rcomment{
+``...Typically, intent inference is modeled as a MDP or POMDP for time-evolution of intent distribution. It would be interesting to see a comparison of intent inference performance between DFT and MPD...'' 
+}
+
+\textbf{Response}
+
+We would like to respectfully claim that, in our system, since autonomy always maintains a probability distribution over goals, implicitly we are indeed modeling the human as a Partially Observable Markov Decision Process. To make this more explicit, in this revision we have added text that states how the human is modeled as a POMDP. We do not want to introduce unnecessary mathematical notation and jargon that will take away from the core aspects of the paper which is that of characterization of control modes according to their inverse legibility capabilities. 
+
+More specifically, implicitly in our paper, the human is modeled as a POMDP in which the uncertainty in user's state is concentrated solely in the user's intended goal. In our humble opinion, we would interpret Bayesian inference as a mechanism to update the probability distribution over goals recursively at every time step based on the evidence received. DFT-based intent inference algorithm proposed in this paper serves as an alternate mechanism to update the probability distribution and is formulated as a constrained dynamical system that evolves in continuous time. We would argue that DFT-based ideas have close similarities to continuous time Bayesian inference and also to some extent is related to LSTM/RNN based goal inference schemes in which the LSTM network essentially behaves like a dynamical systems with memory. The different components in the DFT equations have better interpretation and therefore can be tuned quite easily. 
+
+We have added an illustrative example of a qualitative comparison of our DFT-based intent inference scheme to a memory-based Bayesian prediction scheme and a recursive Bayesian belief update scheme. This example illustrates some of the main differences in how the goal probabilities evolve under different inference schemes. One of the defining characteristics of the DFT-based scheme is the smoothness with which the probabilities evolve and as a result they are robust to noise and can likely eliminate false positives. 
+
+\rcomment{
+	Current metrics only include process parameters including number of mode switches, number of disambiguation requests, number of button presses,...
+}
+\textbf{Response}
+
+In the domain of assistive robotic manipulation, due to dimensionality mismatch between the control interface and the robot, users typically end up performing multiple mode switches during pure teleoperation. Mode switching has been shown to add to the cognitive and physical effort during task execution. One of the goals of our system is to have the autonomy be able to assist the human effectively so that task performance improves via a reduction in the the number of mode switches performed. This is why we focus on number of mode switches/button presses as our main performance metric. We chose not to compare task completion times as we had not optimized our algorithms for computational efficiency and would have affected the task completion times. 
+
+\rcomment{
+	To get statistical results, eight subjects may not be adequate.
+}
+
+\textbf{Response}
+
+As mentioned in the paper, the study was exploratory in nature to test out the feasibility of control mode selection based on inverse legibility ideas. We would also like to point out, even with 8 subjects we were able to see statistical significance in the number of mode switches. It is our strong belief that more number of subjects will likely strengthen these results further. 
+
+% Uncomment in case references are needed
+%\bibliographystyle{apalike}
+%\bibliography{responsereferences}
+
+
+\end{document}

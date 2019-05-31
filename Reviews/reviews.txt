@@ -1,0 +1,134 @@
+Associate Editor's Comments:
+Associate Editor: Kiguchi, Kazuo
+Comments to the Author:
+The paper presents a goal disambiguation algorithm for an assistive device. However, major revision is reqired in the paper. Please modify the paper according to the reviewers' comments and resubmit.
+
+Reviewer's Comments:
+Reviewer: 1
+
+Comments to the Author
+Technological advances may greatly improve user control of assistive devices, highly influencing the user’s choice of an assistive device.  Authors present a theoretical frame for shared user-system control concepts aiming to reduce the dimensionality mismatch between the user interface and controllable degrees of freedom of a robot. 
+	The point of the paper was not necessarily to redice the dimensionality mismatch but to enhance the intent inference capabilities. If the reviewer is referring to the fact that intent inference is hard due to low dimensionality of control signals then it has not come across clearly. 
+
+
+Furthermore, results from a pilot study attempting to easy the user’s cognitive and physical burden in performing simple and complex grasping tasks using two control systems by providing own control mode selection algorithms for disambiguation and intent inference for automatic mode switch are presented.
+	Unclear what this sentence really means. Is the reviewer just trying to summarize what the experiment was really about. 
+
+
+The manuscript is well structured, presenting interesting results, however, the mathematical formalism presented in sections III and IV is less exemplified/detailed in the methods section of the pilot study making difficult correct evaluation of the results presented. 
+	Was it not clear for the reviewer how the math introduced in Sections III and IV was used in the pilot study? 
+
+Given its complexity, 
+	Complexity of what?
+
+detailed presentation of mathematical concepts may be difficult, however, the method section usually includes enough details allowing experiment reproduction.
+	Is this a different way of writing the paper? What details are missing for experiment reproduction? Is the protocol not clear?
+
+	Refer to TNSRE papers. Look at what other papers do. 
+
+	Did refer to 5-6 of them. Looks like the normal way. 
+
+	If the clarity of how the experiment proceeds is clearer then then reproducibility would be fine. 
+
+Clarification of the following issue may greatly improve the manuscript (please note the following coding for eventual location in the text e.g. P4L10C2 means page 4, line 10, column 2) 
+
+
+1. How the probability distribution associated to each goal was defined/computed for the pilot study (evt. reference) and how short-term changes and long-term changes are regarded relative to the duration of the testing trials.
+	Ok. Seems like, to the reviewer the intent inference algorithm used during the trials was not clear. (We can fix this by explicitly stating in the study methods that the intent inference algorithm used for computing the probability distribution was the DFT introduced in Section IV.)
+
+	Typical trial duration can last anywhere between 10-40s? Did we use a timeout? The forward projection is for a set amount of time. t_a and t_b are comparable to trial durations. 
+
+2.Please provide a diagram or table explaining all the phases of one example of a testing trial (showing the path of the robot arm according to the user-system inputs and algorithms involved into processing of these inputs) referring to how the theoretical frame described in sections III and IV was implemented. 
+
+	Ok. So it seems like the reviewer was unable to follow how a specific trial proceeded. We can possibly create a sophisticated diagram which shows path of robot, and mode switches that happened along the way. 
+
+	Refer to other papers. 
+	Block diagram - symbolic. 
+3.Any system intended to provide control according to specific algorithms may introduce errors. Were any errors eventually corrected during trials using manual switch of control mode (is this experimental)
+	The user was free to switch mode anytime. So if the user felt that the algorithm computed an erroneous mode, they had the freedom to switch modes. This is what we highlight in the discussion that although the mode chosen by the algorithm had the potential to be a good mode, for it to be used properly the users need to have a better idea of how the autonomy utilizes their actions for assistive purposes, pointing to the need for better training in these experiment. 
+4. Any possible evaluation of performance of intent inference algorithm. 
+	A strawman version of Bayesian inference was implemented and the results of this is shown in the Figure. For the scope of the paper, we might have to avoid the presentation of an extensive study just evaluating the inference scheme. We can do a simulation based study. 
+
+	Maybe try out a quick simulation based evaluation? (No autonomy. 2D?
+
+Specific comments
+P4-L38-C1 is there any similarity between activation field from DFT and the time evolution of the probability distribution. Any reference for equation 6 … is this equation specific to DFT.
+	Maybe make the term activation field clear in the text. Activation field 'drives' the time evolution of the probability distribution. There is a general form for Equation 6. This specific realization of the general form is for the purposes of proper time evolution of probability distributions for intent inference purposes. 
+
+P4-L42-C2  How close are human and autonomy signals .. please specify what close ‘means’.. how close are these two signals to each other or how close are these signals to the goal  
+	Maybe change the word 'close'. it is ambiguous. Closeness is measured in terms of cosine similarity in the as defined by the metric space for control commands. There are two components. Closeness in translation space and closeness in rotation space. 
+
+	Unclear what the reviewer meant by 'signals to goal?'. There are only two control signals of interest in this context, the human's control signal issued via the interface and the autonomy's control signal that drives the robot towards the inferred goal. 
+
+P4-L45-C2 (equation dimension i of function encoding nonlinearity…)  is directness dependent only on the human signal and space .. What dimension (e.g. measure units) have the human and autonomy signals. 
+	Both are vectors in R^3. Therefore dot products can be evaluated. The directedness measures how aligned is the instantaneous velocity to the straight line path in R^3 connecting the current position of the end effector and the goal. u is in m/s and x is in m/ 
+
+P5-L11-C2 how the user chose between manual switch and disambiguation request…can one say that the user requested disambiguation assistance when not knowing what to choose from the control mode list … why was the disambiguation paradigm including both manual and disambiguation switch … 
+	There were two types of trials. One in which ONLY manual mode switches were used. The other in which alongside manual mode swithces, the user had to activate the disambiguation system at least and was required to move the robot in the mode that was selected by the algorithm for as long as they feel comfortable. We wanted to keep the trials as felxible as possible. 
+
+I understand that this methodology attempted to share control between the user and the system controlling the robot arm, however if the system can provide the optimal mode why not let the trial run entirely on system ability to provide the optimal mode .. 
+	Having the algorithm automatically pick the optimal mode adds other complications such as, when to switch. How to alert the user of an upcoming switch. etc. Which will affect the evaluation? 
+
+did disambiguation switch give errors (e.g. modes more ‘distant’ than the optimal mode given the position of the robot arm relative to the goal) .. 
+	The modes were computed with the idea that the user intiaited motion in the chosen mode will help in intent disambiguation. Therefore optimality in this context is measured in terms of how well is motion in the mode will help in autonomy's intent inference. 
+
+Were any eventual errors given by the disambiguation switch corrected by the manual mode and if positive is there any data available regarding these errors. 
+	however, some of the mode switches were percieved as 'errors' by the user because (as we mention it in the discussion) the users were not completely aware of the autonomy's decision-making process. As a result, even though user initiated robot motion in the control modes selected by the algorithm had the potential to improve intent inference and consequently increase robot assistance and task performance, user did not exploit that. These errors are already captured by the manual mode switches. The users migt have resorted to manual mode switches because they felt that disambiguatin mode switches were erroneous and not useful. 
+
+P5-L18-C2 What are the two disambiguation paradigms…the paragraph above this line mentions two switch paradigms, one manual and one disambiguation
+	Clarify the text. what I meant was assistance paradigms not disambiguation paradigms. The reviewer is justified in his confusion. 
+
+P5-L19-C2 How this sentence must be interpreted: ‘We used a blending-based shared-control paradigm in which the final robot control command was a linear composition of the human control command and an autonomous robot policy.’ In my interpretation if the user initiates a command than the system takes over and alters this command according to the implemented algorithms (taking into consideration the sentence following the cited sentence)…it reminds me of applications where the user directs the robot arm roughly in the direction of the target and the system takes over and perform the ‘fine adjustments’ to fulfill the tasks…will this interpretation fit … Were there any errors reported by the subjected when the subject intended a given command and the system provided another command.
+
+	There is problem with the reviewer's interpretation. There are two types of commands, the control command that corresponds to the end effector velocity and then, te actual button presses for mode switches. The blending happens in control space so that final control command issued to the robot controllers is blended version of the human control command and the autonomy's control command. 
+	This could be rectified by making it explicit how the trial proceeds and what happens during the trial. 
+P5-L35-C1 was selection of modes sequential in a certain predefined order or in a preferential order .. 
+	There is no notion of sequential modes. All we are saying is that if the user wants to switch modes while teleoperation the user can do that via button presses. 
+
+on P6L40-45-C1 something is mentioned about randomization….has the list of modes been randomized as well.
+	No the control modes are always the same. It is just the starting mode that is randomized. 
+
+P5-L45-C1 were the trials time limited or they continued until the goal was reached…same for P6-L45-C1 how long were the testing trials. 
+	Not time limited. The user could as long as they want to complete the trial. If the trial failed due to the robotic arm ending up some weird kinematic singularity, dropped contents, the trial was marked as failed. (We can go back and check how many trials failed.)
+
+Figure 5 What are the eight lines in the temporal pattern of button press…  do these correspond to modes for each system head array or joystick (Figure 2 shows only seven modes for head array and five for joystick) or to the total number of trials (three plus five)…if positive which correspond to manual and which to disambiguation paradigms  
+	This is manual and dismab. Note that even with disambiguation the user was free to do manual switching. The trials which only have blakc dots are the ones with only manual conditions. 
+
+P8-L19-C1 Is there data available regarding the statement ‘One observation from our subject study was how often participants submitted a disambiguation request and then chose not to operate in the selected mode—effectively not letting the robot help them.’
+	Yes we do have it. We have omitted the figure. We can put that in here. It will be half a page. It will reach 10 pages fully then. We can add that it in. 10 pages is max. We are at 8.5. We can also maybe add a comparison table for Bayesian vs DFT? Simulation based? Can we hint at the idea that DFt is a special case of continuous time Bayesian with better interpretability of terms. 
+
+
+Reviewer: 2
+
+Comments to the Author
+This paper presents a goal disambiguation method to enhance the intent inference and assistive capabilities of a shared-control assistive robotic arm.  The scope of the work falls in the transaction. The paper is well written, and the method formulation is reasonable. However, the reviewer has fundamental questions on the research rationale of the work.
+
+Research rationale:
+1.   It may be impractical to rely on people with severe motor impairments to provide extra efforts for intent disambiguation, which may bring extra mental and physical burden to the users. In the results of the paper, it showed that some users determined to not use the switch mode to disambiguate intent due to the required task efforts. 
+	I would say that the likely reason for them not to use the disambiguated mode was lack of training and familiarity with how the autonomy assists them. AFTER having requested disambiguation, effort is no longer a criterion. The focus of this paper was to evaluate just the algorithm. An automated mode switching scheme which completely eliminates the need for user initiated button presses (for mode switches and disambiguatiuon requests) is the next stage of the work. 
+
+	people might not 
+
+The referred “helping robot help people” from Dr. Srini’s article may not be suitable here as that work is crowdsourcing abled people’s help/training samples to improve robot performance, which makes sense in the specific “abled people training autonomous robots” scenario, but not in the assistive or rehab scenario. 
+	We can take this out and that's fine or we can argue that what we wanted to highlight is that fact that by having the human operate in these modes in effect they are providing more legible commands to the autonomy therbey helping them to infer intent more properly. 
+
+Intent disambiguation in rehab/assistive scenario would be more practical if the additional information dimensionality for disambiguation is collected implicitly and/or unobtrusively from users, for example, using EMG or human expression, but may not be explicit action mode switch. To make the power of the mode switch to work, it needs to be automatic switch, as the author pointed out in the discussion section too. 
+
+The “inverse legibility” referred by the author from their other paper has the same issue that it may be better to conduct intent disambiguation through implicit observations at the robot side (increase the intelligence level of the robot) or using multiple natural modality but may not rely on the user’s explicit, unnatural action.
+	We agree with this assessment but automatic mode swicthing is beyond the scope of this paper. What we have introduced is an algorithm to EVALUATE the potential usefulness of the control modes. That is IF we have a automated mode switching scheme, which one of the modes should be selected. Here we are characterized these modes according to their usefulness to autonomy. 
+
+2.      For the purpose of disambiguating intent inference, is there a specific reason to start from joystick only? Would it make more sense to start from using both modalities, joystick and head array, to get better initial intent inference, instead of using joystick then switching it to head array manually, which again relies on the disabled user to switch.
+	
+	Occupational therapists taken this into consideration. 
+	The control interface is typically determined by the level of injury. And typical usage of assistive robots typically rely on one such interface. 
+
+Technical comments:
+1.      A novel intent inference scheme based on ideas from dynamic field theory is claimed as the second contribution, in which time-evolution of intent distribution is formulated as continuous-time constrained dynamical system. Typically, intent inference is modeled as a MDP or POMDP for time-evolution of intent distribution. It would be interesting to see a comparison of intent inference performance between DFT and MPD, especially if DFT is claimed as a technical contribution.
+	This is done using a strawman version where a Bayesian inference scheme is compared against the DFT based intent inference. Bayesian inference typically models the human as POMDP in which the goal is hidden state. The autonomy maintains a belief p(g|uh) and updates it at every time step to imrpove the estimate. It is the choice of updating that matters. DFT is another mechanism with which the belief can be updated. 
+
+2.  Since the system is developed to enhance robot’s assistance to the user, it would be desired if evaluation adds task performance metrics such as completion time and/or success rate. Current metrics only include process parameters including number of mode switches, number of disambiguation requests, number of button presses, and skewness
+
+	number of mode switches is a task performance measure. In assistive teleoperation we want to be able to reduce the number of mode switches. This is the only focus. I
+
+3.  To get statistical results, eight subjects may not be adequate.
+	Exploratory study to show trends? We agree with that. 
