@@ -10,7 +10,7 @@ dft_accuracy_list = zeros(num_trajectories, 1);
 bayes_anca_accuracy_list = zeros(num_trajectories, 1);
 bayes_uh_accuracy_list = zeros(num_trajectories, 1);
 % bayes_uh_n_accuracy = zeros(num_trajectories, 1);
-onscreen = true;
+onscreen = false;
 
 global running_cost optimal_cost_from_start;
 %%
@@ -21,9 +21,9 @@ for i=3:num_trajectories+2
      traj = traj_zeroed;
      uh_history=uh_history_zeroed;
      len_traj = size(traj, 2);
-     if ~strcmp(n, 'trajectory_474.mat')% 363 383 226 408 435 474* 77
-         continue
-     end
+%      if ~strcmp(n, 'trajectory_474.mat')% 363 383 226 408 435 474* 77
+%          continue
+%      end
      %initialize probabilitie vectors
      pgs_BAYES_ANCA = zeros(ng, len_traj);
      pgs_BAYES_ANCA(:, 1) = (1/ng)*ones(ng, 1);
@@ -49,7 +49,7 @@ for i=3:num_trajectories+2
         figure;
         subplot(2,3, 1);
         colors = {'b', 'r', 'k', 'g', 'm'};
-        for i=1:size(reaching_goal_pos, 2)
+        for i=1:size(xg, 2)
             scatter3(xg(1,i), xg(2,i), xg(3,i), 230, colors{i}, 'filled'); grid on; hold on;
         end
 %         scatter3(xg(1,1:ng), xg(2,1:ng), xg(3,1:ng), 230, 'k', 'filled'); grid on; hold on;
@@ -59,7 +59,7 @@ for i=3:num_trajectories+2
         line(xrange+offset, [0,0], [0,0], 'Color', 'r', 'LineWidth', 1.5); %draw x and y axes.
         line([0,0], yrange+offset, [0,0], 'Color', 'g','LineWidth', 1.5);
         line([0,0], [0,0], zrange+offset, 'Color', 'b','LineWidth', 1.5);
-        axis([xrange+offset, yrange+offset, zrange+offset]);`
+        axis([xrange+offset, yrange+offset, zrange+offset]);
         view([142,31]);
         hold on; 
         scatter3(traj(1, :), traj(2,:), traj(3,:), 'k', 'filled');
@@ -90,7 +90,6 @@ for i=3:num_trajectories+2
 %         xlabel('\bf Time Steps'); title('Bayesian uh n');
 %         ylim([0, 1.0]); % b, r, yellow
     end
-    close all;
     %% 363 383 226 408 435 474* 77
     true_goal_index_history_removed = true_goal_index_history;
     true_goal_index_history_removed(min_ind:max_ind) = -1;

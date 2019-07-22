@@ -36,26 +36,32 @@
 \newlabel{ssec:components}{{\unhbox \voidb@x \hbox {III-D}}{3}}
 \citation{schoner2015dynamic}
 \citation{amari1977dynamics}
-\citation{wilson1973mathematical}
 \citation{schoner2008dynamical}
 \newlabel{DK}{{5}{4}}
 \newlabel{EQ2}{{\unhbox \voidb@x \hbox {III-D}}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {IV}Intent Inference}{4}}
 \newlabel{sec:inference}{{IV}{4}}
-\@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{followed by a simulation-based quantitative comparison of goal inference methods in Section\nobreakspace  {}\unhbox \voidb@x \hbox {IV-D}\hbox {}.}}{4}}
+\@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{Section\nobreakspace  {}\unhbox \voidb@x \hbox {IV-B}\hbox {} describes our formulation that makes use of dynamic field theory for the purposes of intent inference and its advantages for assistive robotics followed by its advantages for assistive robotic systems (Section\nobreakspace  {}\unhbox \voidb@x \hbox {IV-C}\hbox {}). Section\nobreakspace  {}\unhbox \voidb@x \hbox {IV-D}\hbox {} presents the simulation-based quantitative comparison of goal inference methods. }}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Dynamic Field Theory}{4}}
 \newlabel{ssec:dft}{{\unhbox \voidb@x \hbox {IV-A}}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Goal inference comparison: (Top Row, Left). The two goals are depicted as black and magenta circles. The robot end-effector trajectory is colored in blue and the start and end points are marked as red and green respectively. (Top Row, Right). The user control command profile for translational dimensions. (Bottom Row, Left to Right). Goal probabilities for Memory-Based Prediction (Left), Recursive Bayesian Belief Update (Middle) and DFT-based inference scheme (Right). }}{4}}
-\newlabel{fig:dft_inference}{{1}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Dynamic Neural Fields for Intent Inference}{4}}
+\newlabel{ssec:dft_ii}{{\unhbox \voidb@x \hbox {IV-B}}{4}}
+\newlabel{eq:dft_ii}{{6}{4}}
 \citation{jain2018recursive}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Dynamic Neural Fields for Intent Inference}{5}}
-\newlabel{ssec:dft_ii}{{\unhbox \voidb@x \hbox {IV-B}}{5}}
-\newlabel{eq:dft_ii}{{6}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Advantages of DFT-based Approach for Assitive Robotics}{5}}
+\citation{dragan2013policy}
+\citation{jain2018recursive}
+\@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{Advantages of DFT-based Approach for Assitive Robotics}}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}\added {Advantages of DFT-based Approach for Assitive Robotics}}{5}}
+\newlabel{ssec:dft_adv}{{\unhbox \voidb@x \hbox {IV-C}}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \added {Goal inference comparison: (Top Row, Left). The two goals are depicted as blue and red circles. The robot end-effector trajectory is colored in magenta. (Top Row, Right). The simulated user control command profile for translational dimensions. (Bottom Row, Left to Right). Goal probabilities for Memory-Based Prediction (Left), Recursive Bayesian Belief Update (Middle) and DFT-based inference scheme (Right).} }}{5}}
+\@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{Goal inference comparison: (Top Row, Left). The two goals are depicted as blue and red circles. The robot end-effector trajectory is colored in magenta. (Top Row, Right). The simulated user control command profile for translational dimensions. (Bottom Row, Left to Right). Goal probabilities for Memory-Based Prediction (Left), Recursive Bayesian Belief Update (Middle) and DFT-based inference scheme (Right).}}{5}}
+\newlabel{fig:dft_inference}{{1}{5}}
+\@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{In our work, autonomy's inference of user intent solely relies on user control commands. In the domain of assistive robotics, it is quite often the case that the user input is highly discontinuous (due to fatigue, motor impairments, stoppage for mode switches \textit  {et cetera}) due to which it becomes important to reason about belief over goals in the \textit  {absence} of useful information. Standard discrete-time recursive belief update equation as implemented in\nobreakspace  {}\cite  {jain2018recursive} is}}{5}}
+\@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{where $\eta $ is the normalization factor, $\otimes $ is the Hadamard product, $\boldsymbol  {p}(\boldsymbol  {u}_h | \boldsymbol  {g})$ is the vector containing the likelihoods for each goal, $\boldsymbol  {p}_t$ and $\boldsymbol  {p}_{t-1}$ denote the probability distribution over goals at time $t$ and $t-1$ respectively. }}{5}}
+\@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{In the absence of testable information (no control commands issued by the user), in accordance to the maximum entropy principle, the belief should converge to a uniform distribution. Instead, in recursive belief update when $\boldsymbol  {u}_h = 0$ the likelihood vector is uniform, and it can be shown that the posterior distribution over goals converges to the stationary distribution of $\boldsymbol  {P}$. This is counter-intuitive and can introduce unwanted biases in the inference. On the contrary, in the absence of $\boldsymbol  {u}_h$ Equation\nobreakspace  {}6\hbox {} converges to a uniform distribution mimicking natural forgetting behavior resulting in a more meaningful inference. DFT-based approach also offers the capability to encode task-level global priors in the `rest state' term. The relative values of $\tau _1$ and $\tau _2$ controls the convergence behavior (whether to uniform distribution or rest state distribution respectively) in the absence of $\boldsymbol  {u}_h$.}}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-D}}Quantitative Comparison of Goal Inference Methods}{5}}
 \newlabel{ssec:dft_comp}{{\unhbox \voidb@x \hbox {IV-D}}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Study Methods}{5}}
-\newlabel{sec:study_methods}{{V}{5}}
+\@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{In order to evaluate the performance of the DFT-based inference approach a point robot simulation-based quantitative comparison to 1) memory-based prediction\nobreakspace  {}\cite  {dragan2013policy} and 2) recursive belief updating\nobreakspace  {}\cite  {jain2018recursive} was implemented in $\mathbb  {R}^3$. The human is modeled as issuing a control command that noisily optimizes a straight-line path towards the intended goal. Signal dropout was simulated by randomly zeroing out control commands. $\boldsymbol  {u}_h$ was set to be zero for a significant portion of each trial as well in order to compare the convergence behavior of different approaches. The number of goals varied between three and five and goal transitions were randomly sampled every five to eight time steps. 500 trials were simulated. Inference accuracy is computed as the fraction of total trial time (excluding when $\boldsymbol  {u}_h = 0$) for which an algorithm correctly inferred the ground truth. Results for DFT-based inference were comparable to recursive belief updating ($87.46\%$ and $87.43\%$ respectively) and outperformed memory-based prediction significantly ($59.15\%$). Figure\nobreakspace  {}1\hbox {} shows an illustrative example of goal inference using the various methods. One can see that when there is no control command issued unlikes the recursive belief approach, the DFT-based approach converges to the maximum entropy distribution.}}{5}}
 \citation{argall2009survey}
 \citation{schaal1997learning}
 \citation{hsu2002randomized}
@@ -63,15 +69,17 @@
 \citation{rimon1992exact}
 \citation{tanner2003nonholonomic}
 \citation{khatib1986real}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Study Methods}{6}}
+\newlabel{sec:study_methods}{{V}{6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces A 2-axis joystick (left) and switch-based head array (center) and their operational paradigms (right). $v$ and $\omega $ indicate the translational and rotational velocities of the end-effector, respectively. }}{6}}
 \newlabel{fig:interfaces}{{2}{6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Study tasks performed by subjects. \textit  {Left:} Single-step reaching task. \textit  {Right:} Multi-step pouring task. }}{6}}
 \newlabel{fig:tasks}{{3}{6}}
 \citation{herlant2016assistive}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Flow chart depicting user action sequence during a single trial. The user can issue three types of actions: a) Velocity control command b) Manual mode switch using a button press and c) Disambiguation request using a button press. Option a) results in online intent inference followed by generation of autonomy signal and blended control signal and subsequently causes robot motion. Options b) and c) lead to a control mode switch. At every timestep, the autonomy checks for the goal condition and decides whether to terminate the trial or not.}}{7}}
-\newlabel{fig:exp_block_diagram}{{4}{7}}
 \@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{Task Completion Time}}{7}}
 \@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{Time taken to complete the task successfully and is an indicator of how well the human and autonomy are working together.}}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Flow chart depicting user action sequence during a single trial. The user can issue three types of actions: a) Velocity control command b) Manual mode switch using a button press and c) Disambiguation request using a button press. Option a) results in online intent inference followed by generation of autonomy signal and blended control signal and subsequently causes robot motion. Options b) and c) lead to a control mode switch. At every timestep, the autonomy checks for the goal condition and decides whether to terminate the trial or not.}}{7}}
+\newlabel{fig:exp_block_diagram}{{4}{7}}
 \@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{Additionally, at the end of each testing phase, subjective data was gathered via a brief questionnaire. Users were given the following statements regarding the usefulness and capability of the assistance system to rate according to their agreement. }}{7}}
 \@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{Control modes chosen by the system made task execution easier.}}{7}}
 \@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{I liked operating the robots in the control modes chosen by the system.}}{7}}
@@ -84,23 +92,22 @@
 \@writefile{toc}{\contentsline {section}{\numberline {VI}Results}{7}}
 \newlabel{sec:results}{{VI}{7}}
 \@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{Furthermore, the survey results showed that operating the robot in the disambiguating modes made task execution easier and that users preferred the \textit  {Disambiguation} paradigm to the \textit  {Manual} paradigm.}}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Comparison of average number of button presses between \textit  {Disambiguation} and \textit  {Manual} Paradigms. \textit  {Left:} Grouped by control interfaces. \textit  {Right:} Grouped by tasks.}}{7}}
-\newlabel{fig:button_press}{{5}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Temporal pattern of button presses for each interface and the multi-step task on a trial-by-trial basis for all subjects. Eight trials per subject per interface/task combination. For each subject, each light gray horizontal line represents a single trial (8 trials in total).}}{8}}
-\newlabel{fig:ha_man_disamb}{{6}{8}}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Characterization of the temporal distribution of disambiguation requests. }}{8}}
 \newlabel{table:skewness}{{I}{8}}
-\@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{No statistical difference was observed in task completion times between the \textit  {Manual} and \textit  {Disambiguation} paradigm. However, the variance in the task completion times was lower in \textit  {Disambiguation} paradigm indicating that the task performance was more consistent when robot control was performed in the disambiguating control modes chosen by the autonomy. }}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Comparison of task completion times between \textit  {Disambiguation} and \textit  {Manual} Paradigms. \textit  {Left:} Grouped by control interfaces. \textit  {Right:} Grouped by tasks.}}{8}}
-\newlabel{fig:task_completion}{{7}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Comparison of average number of button presses between \textit  {Disambiguation} and \textit  {Manual} Paradigms. \textit  {Left:} Grouped by control interfaces. \textit  {Right:} Grouped by tasks.}}{8}}
+\newlabel{fig:button_press}{{5}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Temporal pattern of button presses for each interface and the multi-step task on a trial-by-trial basis for all subjects. Eight trials per subject per interface/task combination. For each subject, each light gray horizontal line represents a single trial (8 trials in total).}}{8}}
+\newlabel{fig:ha_man_disamb}{{6}{8}}
+\@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{No statistical difference was observed in task completion times between the \textit  {Manual} and \textit  {Disambiguation} paradigm. However, the variance in the task completion times was lower in \textit  {Disambiguation} paradigm indicating that the task performance was more consistent when robot control was performed in the disambiguating control modes chosen by the autonomy. Furthermore, the overall task success was $94.53\%$ (242 out of 256 trials). 10 out of the 14 unsuccessful trials happened during the multi-step task.}}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Comparison of task completion times between \textit  {Disambiguation} and \textit  {Manual} Paradigms. \textit  {Left:} Grouped by control interfaces. \textit  {Right:} Grouped by tasks.}}{9}}
+\newlabel{fig:task_completion}{{7}{9}}
 \@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Subjective Survey Results}}{9}}
 \newlabel{table:survey_results}{{II}{9}}
-\@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{Table\nobreakspace  {}II\hbox {} summarizes the results of the subject survey. Users rated the utility value of the disambiguation paradigm (\textbf  {Q1}) fairly high (4.87$\pm $0.95) indicating that the subjects felt the task execution to be easier during disambiguating trials. User responses stringly validated the effectiveness of the blending-based shared control scheme (6.19$\pm $0.75). The survey results also indicate that subjects liked to operate the robot (\textbf  {Q2}) in the disambiguating modes (5.00$\pm $1.15) and overwhelming preferred (\textbf  {Q6}) the \textit  {Disambiguation} to the \textit  {Manual} paradigm. Unsurprisingly, all users felt that it was harder to control the robot using the headarray (\textbf  {Q4}) and felt that the utility value of the disambiguation paradigm was highest when using the headarray.(\textbf  {Q4}). Only 4 out of the 8 subjects found the \textit  {Disambiguation} paradigm to be user-friendly likely due to the lack of transparency in why the autonomy chose the disambiguation mode.}}{9}}
+\@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{Table\nobreakspace  {}II\hbox {} summarizes the results of the subject survey. Users rated the utility value of the disambiguation paradigm (\textbf  {Q1}) fairly high (4.87$\pm $0.95) indicating that task execution was easier during disambiguating trials. User responses strongly validated the effectiveness of the blending-based shared control scheme (\textbf  {Q3}, 6.19$\pm $0.75). The responses also showed that subjects liked to operate the robot (\textbf  {Q2}) in the disambiguating modes (5.00$\pm $1.15) and overwhelming preferred (\textbf  {Q6}) the \textit  {Disambiguation} to the \textit  {Manual} paradigm. Unsurprisingly, all users felt that it was harder to control the robot using the headarray (\textbf  {Q4}) and the utility value of the disambiguation paradigm was highest when using the headarray.(\textbf  {Q4}). Only 4 out of the 8 subjects found the \textit  {Disambiguation} paradigm to be user-friendly likely due to the lack of transparency in why the autonomy chose the disambiguation mode.}}{9}}
 \@writefile{toc}{\contentsline {section}{\numberline {VII}Discussion}{9}}
 \newlabel{sec:discussion}{{VII}{9}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Time evolution of goal probabilities. \textit  {Top:} Multi-step task. \textit  {Bottom:} Single-step task. The gray horizontal dashed line above denotes the minimum threshold for robot assistance. The black horizontal bars at the bottom denote non-zero human control commands. The red and black dots indicate button presses that are disambiguation requests and mode switches respectively. }}{9}}
 \newlabel{fig:gp_evolution}{{8}{9}}
-\@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{as a result of which half of the subjects thought the disambiguating system was not user-friendly}}{9}}
 \bibstyle{IEEEtran}
 \bibdata{references}
 \bibcite{laplante1992assistive}{1}
@@ -123,16 +130,16 @@
 \bibcite{gopinath2017mode}{18}
 \bibcite{schoner2015dynamic}{19}
 \bibcite{amari1977dynamics}{20}
-\bibcite{wilson1973mathematical}{21}
-\bibcite{schoner2008dynamical}{22}
-\bibcite{jain2018recursive}{23}
-\bibcite{argall2009survey}{24}
-\bibcite{schaal1997learning}{25}
-\bibcite{hsu2002randomized}{26}
-\bibcite{ratliff2009chomp}{27}
-\bibcite{rimon1992exact}{28}
-\bibcite{tanner2003nonholonomic}{29}
-\bibcite{khatib1986real}{30}
+\bibcite{schoner2008dynamical}{21}
+\bibcite{jain2018recursive}{22}
+\bibcite{argall2009survey}{23}
+\bibcite{schaal1997learning}{24}
+\bibcite{hsu2002randomized}{25}
+\bibcite{ratliff2009chomp}{26}
+\bibcite{rimon1992exact}{27}
+\bibcite{tanner2003nonholonomic}{28}
+\bibcite{khatib1986real}{29}
+\@writefile{loc}{\contentsline {subsection}{Added: \truncate {.3\textwidth }{as a result of which half of the subjects thought the disambiguating system was not user-friendly}}{10}}
 \@writefile{toc}{\contentsline {section}{\numberline {VIII}Conclusion}{10}}
 \newlabel{sec:conclusions}{{VIII}{10}}
 \@writefile{toc}{\contentsline {section}{References}{10}}
