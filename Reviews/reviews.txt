@@ -132,3 +132,23 @@ Technical comments:
 
 3.  To get statistical results, eight subjects may not be adequate.
 	Exploratory study to show trends? We agree with that. 
+
+
+
+
+#########################################################################################################
+REVIEW 2
+
+Comments to the Author
+Thanks much for authors’ efforts on revising the papers. The reviewer appreciates it. However, after carefully reading the revised paper and responses to the comments, the reviewer still thinks there is significant deficiency of current research work to be published in the IEEE Transactions on Neural Systems and Rehabilitation Engineering. 
+
+1.      Metrics using only the number of mode switches are not sufficient for the research in robot-assisted human daily activity field. With the goal to improve task performance, the metric directly quantifying task performance will be needed. In addition, how human users perceive the presented methods are missing, which is essential for human-centered assistance. Without these two evaluation aspects, the effectiveness of the systems can probably not be demonstrated. 
+
+2.      Comparison with memory-based intent inference and Recursive belief method is not convincing. The authors concluded that “overall the performance of DFT-based inference schemes are comparable to standard Bayesian approaches”.  With this only comparable performance as well as the possibly increased complexity of the presented DFT method due to the newly introduced information dimension, the impact of the DFT method could be weak. 
+It is true that “The choice of cost functions and likelihood functions have a significant impact on the performance of the memory-based and recursive belief update inference schemes”. However, well defined cost functions and likelihood functions for standard Bayesian approaches are achievable and exist, which also weakens the impact of the DFT method. 
+
+
+Reviewer: 2
+
+Comments to the Author
+I have no further comments
