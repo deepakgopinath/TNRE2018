@@ -1,0 +1,108 @@
+% Copyright Javier Sánchez-Monedero.
+% Please report bugs and suggestions to (jsanchezm at uco.es)
+%
+% This document is released under a Creative Commons Licence 
+% CC-BY-SA (http://creativecommons.org/licenses/by-sa/3.0/) 
+%
+% BASIC INSTRUCTIONS: 
+% 1. Load and set up proper language packages
+% 2. Complete the paper data commands
+% 3. Use commands \rcomment and \newtext as shown in the example
+
+\documentclass[a4paper,twoside,11pt]{reviewresponse}
+
+% 1. Load and set up proper language packages
+%\usepackage[utf8x]{inputenc}
+\usepackage[latin9]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}  % assumes amsmath package installed
+
+% 2. Complete the paper data
+\newcommand{\myAuthors}{{Deepak E. Gopinath$^{\displaystyle 1, 3}$, ~Brenna D. Argall$^{\displaystyle 1,2,3}$, }}
+\newcommand{\myAuthorsShort}{John.~Doe et. al}
+\newcommand{\myEmail}{deepak.gopinath@u.northwestern.edu}
+\newcommand{\myTitle}{Active Intent Disambiguation for Shared Autonomy Robots - Response to Reviewers - Revision 2}
+\newcommand{\myShortTitle}{Response to reviewers}
+\newcommand{\myJournal}{Transactions on Neural Systems and Rehabilitation Engineering}
+\newcommand{\myDept}{{$^{\displaystyle 1}$Department of Mechanical Engineering, Northwestern University, Evanston, IL}\\
+{$^{\displaystyle 2}$ Departments of Computer Science and Physical Medicine and Rehabilitation, Northwestern University, Evanston, IL  }\\
+{$^{\displaystyle 3}$ Shirley Ryan AbilityLab, Chicago, IL }\\}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\usepackage[linktoc=all]{hyperref}
+\usepackage[linktoc=all,bookmarks,bookmarksopen=true,bookmarksnumbered=true]{hyperref}
+
+\hypersetup{
+pdfauthor = {\myAuthorsShort},
+pdftitle = {\myTitle},
+pdfsubject = {\myJournal\xspace},
+colorlinks = true,
+linkcolor=black!70!green,          % color of internal links
+citecolor=black!70!green,        % color of links to bibliography
+filecolor=magenta,      % color of file links
+urlcolor=black!70!green           % color of external links
+}
+
+\begin{document}
+
+\thispagestyle{plain}
+
+\begin{center}
+ {\LARGE\myTitle} \vspace{0.5cm} \\
+ {\large\myJournal} \vspace{0.5cm} \\
+ \today \vspace{0.5cm} \\
+ \myAuthors \\
+ \url{\myEmail} \vspace{1cm} \\
+ \myDept
+\end{center}
+
+%\tableofcontents
+
+%\begin{abstract}
+
+We once again sincerely thank the reviewers for their valuable and constructive feedback. In this revised submission, we have made every effort to address all the major points raised by the reviewers and have modified the manuscript accordingly. For added ease of reading, we are also submitting a version of the revised manuscript in which the modifications are highlighted in \newtext{blue color}. Detailed responses to the comments follow.  
+%\end{abstract}
+
+\section{Reviewer 1}
+
+\rcomment{
+Metrics using only the number of mode switches are not sufficient for the research in robot-assisted human daily activity field. With the goal to improve task performance, the metric directly quantifying task performance will be needed. In addition, how human users perceive the presented methods are missing, which is essential for human-centered assistance. Without these two evaluation aspects, the effectiveness of the systems can probably not be demonstrated. 
+}
+
+\textbf{Response}
+
+\subsection{User Survey}
+As a part of our experiment we had conducted subjective evaluation of the algorithm by administering a survey questionnaire at the end of each phase (for each task). We chose not to include the user survey results in the previous versions of the manuscript due to space constraints. We wholeheartedly agree with the reviewer's observation that user perception is an important factor for the evaluation of human-centered assistance. Therefore, we have decided to include the user survey results in this version. To that end, we had reduce the sizes of some of the images (one column instead of two column). 
+
+Overall the users rated the usefulness of the disambiguation algorithm fairly high and found that task execution was easier for disambiguating trials. This indicates that a reduction in the number of button presses has a huge positive impact on task performance
+
+
+\subsection{Task Success and Task Completion Times}
+As per the reviewers' suggestion we analyzed the task completion times and we are reporting the results. As our algorithm was not time optimized and also due to the lack of transparency regarding \textit{why} the autonomy is choosing the disambiguation modes, a statistically significant difference was not observed between the manual and disambiguation. However, an overall trend of a reduction in variance was observed in the the disambiguating trials indicating that the task performance was in general more consistent. We also report the overall task success (94.53$\%$). 
+
+\rcomment{
+ Comparison with memory-based intent inference and Recursive belief method is not convincing....
+}
+
+\textbf{Response}
+
+The reviewer's comment inspired us to look even more closely into the inner workings of the DFT based approach and conduct simulation-based quantitative evaluation of the different intent inference approaches. 
+A new section has been added to discuss the advantages of DFT-based approach in the context of assistive robotics. 
+
+A key requirement of an intent inference algorithm in the context of assistive setting is that it should be able reason about goal probabilities in the \textbf{absence} of useful information. In our system we rely solely on user control commands as our evidence variable for inference. Subjects may not issue velocity control commands for large chunks of time due to fatigue, motor impairment, mode switches, cognitive load etc. 
+
+We show that in the absence of control commands DFT-based approach converges according to the \textit{principle of maximum entropy} to a uniform distribution whereas recursive Bayesian approaches as implemented in [23] converges to the stationary distribution of the underlying goal transition matrix which can potentially create unwanted biases in the inference. 
+
+We have replaced the qualitative comparison with a simulation-based quantitative comparison of memory-based, recursive Bayesian and DFT approach. The inference accuracy for DFT approach was comparable to the recursive Bayesian updating but significantly better than the memory-based approach indicating that no degradation in inference accuracy when the control commands are available. 
+
+
+
+% Uncomment in case references are needed
+%\bibliographystyle{apalike}
+%\bibliography{responsereferences}
+
+
+\end{document}
