@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.3)  28 JUL 2019 09:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.3)  28 JUL 2019 13:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -896,7 +896,9 @@ Package pdftex.def Info: ./figures/inference_comparison_new-eps-converted-to.pd
 f used on input line 704.
 (pdftex.def)             Requested size: 252.0pt x 70.04106pt.
 
-[5 <./figures/inference_comparison_new-eps-converted-to.pdf>]
+Underfull \vbox (badness 2189) has occurred while \output is active []
+
+ [5 <./figures/inference_comparison_new-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./figures/Fig6_New.eps>
 (epstopdf)                    date: 2018-11-13 13:13:38
 (epstopdf)                    size: 392100 bytes
@@ -1019,7 +1021,7 @@ File: ./figures/task_completion-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figures/task_completion-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/task_completion-eps-converted-to.pdf used on
  input line 920.
-(pdftex.def)             Requested size: 252.00336pt x 157.06522pt.
+(pdftex.def)             Requested size: 252.00336pt x 128.91533pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1056,11 +1058,11 @@ acker,
 
  [10] (./bare_jrnl.aux) ) 
 Here is how much of TeX's memory you used:
- 14520 strings out of 495028
- 246564 string characters out of 6181497
- 446303 words of memory out of 5000000
+ 14529 strings out of 495028
+ 246642 string characters out of 6181497
+ 461113 words of memory out of 5000000
  17054 multiletter control sequences out of 15000+600000
- 68476 words of font info for 337 fonts, out of 8000000 for 9000
+ 68997 words of font info for 343 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
  38i,20n,51p,10414b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/deepak/.texmf-var/fonts/pk/ljfour/public/bbm/b
@@ -1085,7 +1087,7 @@ ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bare_jrnl.pdf (10 pages, 1160799 bytes).
+Output written on bare_jrnl.pdf (10 pages, 1160918 bytes).
 PDF statistics:
  180 PDF objects out of 1000 (max. 8388607)
  121 compressed objects within 2 object streams

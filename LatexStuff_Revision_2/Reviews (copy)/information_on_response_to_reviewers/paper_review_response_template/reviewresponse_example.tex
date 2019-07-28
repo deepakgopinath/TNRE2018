@@ -89,15 +89,18 @@ As per the reviewers' suggestion we analyzed the task completion times and we ar
 
 \textbf{Response}
 
-The reviewer's comment inspired us to look even more closely into the inner workings of the DFT based approach and conduct simulation-based quantitative evaluation of the different intent inference approaches. 
-A new section has been added to discuss the advantages of DFT-based approach in the context of assistive robotics. 
+The reviewer's comment inspired us to look even more closely into the inner workings of the field-theoretic approach and conduct simulation-based quantitative evaluation of the different intent inference approaches. 
+A new section has been added to discuss the advantages of field-theoretic approach in the context of assistive robotics. 
 
 A key requirement of an intent inference algorithm in the context of assistive setting is that it should be able reason about goal probabilities in the \textbf{absence} of useful information. In our system we rely solely on user control commands as our evidence variable for inference. Subjects may not issue velocity control commands for large chunks of time due to fatigue, motor impairment, mode switches, cognitive load etc. 
 
-We show that in the absence of control commands DFT-based approach converges according to the \textit{principle of maximum entropy} to a uniform distribution whereas recursive Bayesian approaches as implemented in [23] converges to the stationary distribution of the underlying goal transition matrix which can potentially create unwanted biases in the inference. 
+We show that in the absence of control commands our field-theoretic approach converges according to the \textit{principle of maximum entropy} to a uniform distribution whereas recursive Bayesian approaches as implemented in [23] converges to the stationary distribution of the underlying goal transition matrix which can potentially create unwanted biases in the inference. 
 
-We have replaced the qualitative comparison with a simulation-based quantitative comparison of memory-based, recursive Bayesian and DFT approach. The inference accuracy for DFT approach was comparable to the recursive Bayesian updating but significantly better than the memory-based approach indicating that no degradation in inference accuracy when the control commands are available. 
+We have replaced the qualitative comparison with a simulation-based quantitative comparison of memory-based, recursive Bayesian and the field-theoretic approach. The inference accuracy for field-theoretic approach was comparable to the recursive Bayesian updating but significantly better than the memory-based approach indicating that no degradation in inference accuracy when the control commands are available. 
 
+\section{Reviewer 2}
+
+We are glad that you were happy with the submitted version. In this revised version we have further improved different sections of the paper according to the suggestion of Reviewer 1 and we believe that this has significantly strengthened our paper. 
 
 
 % Uncomment in case references are needed
