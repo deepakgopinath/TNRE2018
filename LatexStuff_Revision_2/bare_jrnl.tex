@@ -433,7 +433,7 @@
 
 % The paper headers
 %\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
-\markboth{IEEE Transactions on Neural Systems and Rehabilitation Engineering, April 2019}
+\markboth{IEEE Transactions on Neural Systems and Rehabilitation Engineering, July 2019}
 {\MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
 % The only time the second header will appear is for the odd numbered pages
 % after the title page when using the twoside option.
@@ -466,7 +466,7 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-Assistive shared-control robots have the potential to transform the lives of millions of people afflicted with severe motor impairments. The usefulness of shared-control robots typically relies on the underlying autonomy's ability to infer the user's needs and intentions, and the ability to do so \textit{unambiguously} is often a limiting factor for providing appropriate assistance confidently and accurately. The contributions of this paper are three-fold. First, we propose a \textit{goal disambiguation} algorithm that enhances the intent inference and assistive capabilities of a shared-control assistive robotic arm. Second, we introduce an \textit{intent inference} algorithm inspired by dynamic field theory that works in tandem with the disambiguation scheme. Third, we present a pilot study with eight subjects to evaluate the efficacy of the disambiguation algorithm. Our results suggest that (a) the disambiguation system is of greater utility for more limited control interfaces and more complex tasks, and (b) subjects demonstrated a wide range of disambiguation request behaviors with the common thread of concentrating requests early in the execution.
+Assistive shared-control robots have the potential to transform the lives of millions of people afflicted with severe motor impairments. The usefulness of shared-control robots typically relies on the underlying autonomy's ability to infer the user's needs and intentions, and the ability to do so \textit{unambiguously} is often a limiting factor for providing appropriate assistance confidently and accurately. The contributions of this paper are three-fold. First, we propose a \textit{goal disambiguation} algorithm that enhances the intent inference and assistive capabilities of a shared-control assistive robotic arm. Second, we introduce a field-theoretic approach to \textit{intent inference} inspired by dynamic field theory that works in tandem with the disambiguation scheme. Third, we present a pilot study with eight subjects to evaluate the efficacy of the disambiguation algorithm. Our results suggest that (a) the disambiguation system is of greater utility for more limited control interfaces and more complex tasks, and (b) subjects demonstrated a wide range of disambiguation request behaviors with the common thread of concentrating requests early in the execution.
 %(c) there are no differences in the onset of the robot assistance between different mode switching paradigms across tasks or across interfaces. 
 \end{abstract}
 
@@ -513,7 +513,7 @@ More specifically, in this work we investigate how the selection of a subset of 
 The three main contributions of this work are as follows:
 \begin{enumerate}
 	\item First, we develop a control mode selection algorithm which selects the control mode \textit{for} the user, in which the user-initiated motion will help the autonomy to \textit{maximally disambiguate} human intent by eliciting more \textit{intent expressive} control commands from the human. In doing so, the autonomy will likely be able to assist the human more effectively and thereby improve overall task performance. This is important especially in the domain of assistive robotics wherein the user control commands are typically low-dimensional and sparse due to the inherent limitations of the control interfaces. 
-	\item Second, as the disambiguation power of our algorithm is closely linked to the fidelity of the underlying intent inference mechanism, we also propose a novel intent inference scheme based on ideas from \textit{dynamic field theory} in which the time evolution of the probability distribution over goals is specified as continuous-time constrained dynamical system.
+	\item Second, as the disambiguation power of our algorithm is closely linked to the fidelity of the underlying intent inference mechanism, we also propose a field-theoretic approach to intent inference based on ideas from \textit{dynamic field theory} in which the time evolution of the probability distribution over goals is specified as a continuous-time constrained dynamical system \added{that obeys the \textit{principle of maximum entropy} in the absence of user control commands.}
 	\item Third, we present results from a pilot study conducted to evaluate the efficacy of the disambiguation algorithm.
 \end{enumerate}
 
@@ -628,7 +628,7 @@ while $k^* = \argmax_k D_k$ gives the control dimension with highest disambiguat
 Disambiguation mode $m^{*}$ is the mode that the algorithm chooses \textit{for} the human to better estimate their intent. 
 \section{Intent Inference}\label{sec:inference}
 
-In this section, we propose a novel intent inference scheme inspired by \textit{dynamic field theory} in which the time evolution of the probability distribution $\boldsymbol{p}(t)$ is specified as a dynamical system with constraints. Section~\ref{ssec:dft} provides a primer on the basic principles and features of \textit{dynamic field theory} and its application in the fields of neuroscience and cognitive robotics. \added{Section~\ref{ssec:dft_ii} describes our formulation that makes use of dynamic field theory for the purposes of intent inference and its advantages for assistive robotics followed by its advantages for assistive robotic systems (Section~\ref{ssec:dft_adv}). Section~\ref{ssec:dft_comp} presents the simulation-based quantitative comparison of goal inference methods. }
+In this section, we propose a novel intent inference scheme inspired by \textit{dynamic field theory} in which the time evolution of the probability distribution $\boldsymbol{p}(t)$ is specified as a dynamical system with constraints. Section~\ref{ssec:dft} provides a primer on the basic principles and features of \textit{dynamic field theory} and its application in the fields of neuroscience and cognitive robotics. \added{Section~\ref{ssec:dft_ii} describes our formulation that makes use of dynamic field theory for the purposes of intent inference (Section~\ref{ssec:dft_adv}) presents the characteristics of the formulation and its applicability to assistive robotics and a simulation-based quantitative comparison of different goal inference methods. }
 \subsection{Dynamic Field Theory}\label{ssec:dft}
 
 In Dynamic Field Theory (DFT)~\cite{schoner2015dynamic}, variables of interest are treated as dynamical state variables. To represent the information about these variables requires two dimensions: one which specifies the value the variables can attain (the domain) and the other which encodes the \textit{activation level} or the amount of information about a particular value. These \textit{activation fields} (also known as dynamic neural fields) are analogous to probability distributions defined over a random variable. 
@@ -646,7 +646,7 @@ These activation fields possess some unique characteristics that make them ideal
 %The intent inference approach introduced in this section is inspired by \textit{Dynamic Field Theory} (DFT) in which the time evolution of the probability distribution $\boldsymbol{p}(t)$ is specified as a dynamical system with constraints. 
 
 %Recurrent interaction between the state variables, robustness to noise, and inherent memory make dynamic neural fields an ideal candidate for an intent inference engine. 
-Our insight is to use the framework of dynamic neural fields to specify the time evolution of the probability distribution $\boldsymbol{p}(t)$, in which we treat the individual goal probabilities $p^i(t)$ as constrained dynamical state variables such that $p^i(t) \in [0, 1]$ and $\Sigma_{1}^{n_g}p^{i}(t) = 1$. 
+Our insight is to use the framework of dynamic neural fields to specify the time evolution of the probability distribution $\boldsymbol{p}(t)$, in which we treat the individual goal probabilities $p^i(t)$ as constrained dynamical state variables such that $p^i(t) \in [0, 1]$ and $\Sigma_{1}^{n_g}p^{i}(t) = 1$. We refer to this approach as the \textit{field-theoretic intent inference.}
 %The dynamical system can be generically written as 
 %\begin{equation*}
 %\frac{\partial \boldsymbol{p}(t)}{\partial t} = F(\boldsymbol{p}(t), \boldsymbol{u}_h ; \boldsymbol{\Theta})
@@ -664,7 +664,7 @@ Our insight is to use the framework of dynamic neural fields to specify the time
 %\dot{\boldsymbol{p}}(t) = F(\boldsymbol{p}(t), \boldsymbol{u}_h ; \boldsymbol{\Theta})
 %\end{equation*}
 %where $F$ represents a nonlinear vector field, $\boldsymbol{u}_h$ is the human control input and $\boldsymbol{\Theta}$ represents all other task-relevant features that affect the time-evolution of the probability distribution. 
-The full specification of the neural field is given by
+The full specification of the field is given by
 %The time evolution of the probability distribution is given by
 %\begin{multline}\label{eq:dft}
 %\frac{\partial \boldsymbol{p}(t)}{\partial t} = \frac{1}{\tau}\bigg[-\mathbb{I}_{n_g\times n_g}\cdot\boldsymbol{p}(t) + \underbrace{\frac{1}{n_g}\cdot\mathbbm{1}_{n_g}\bigg]}_{\text{rest state}} \\+  \underbrace{\boldsymbol{\lambda}_{n_g\times n_g}\cdot\sigma(\boldsymbol{\xi}(\boldsymbol{u}_h;\boldsymbol{\Theta}))}_{\text{excitatory + inhibitory}}
@@ -684,7 +684,7 @@ The full specification of the neural field is given by
 \end{equation}
 %\end{equation}
 
-where $\boldsymbol{u}_h$ is the human control input and $\boldsymbol{\Theta}$ represents all other task-relevant features, time-scale parameters $\tau_1, \tau_2$ determine the memory capacity, $\boldsymbol{P}_{n_g\times n_g}$ is the state transition matrix for the embedded Markov chain that models the goal transitions as jump processes, $\mathbbm{1}_{n_g}$ is a vector of dimension $n_g$ containing all ones, $\boldsymbol{\lambda}$ is the control matrix that controls the excitatory and inhibitory aspects, $\boldsymbol{\xi}$ is a function that encodes the nonlinearity through which human control commands and task features affect the time evolution, and $\sigma$ is a biased sigmoidal nonlinearity given by $\sigma(\boldsymbol{\xi}) = \frac{1}{1 + e^{-\boldsymbol{\xi}}} - 0.5$. 
+where $\boldsymbol{u}_h$ is the human control input and $\boldsymbol{\Theta}$ represents all other task-relevant features, time-scale parameters $\tau_1, \tau_2$ determine the memory capacity and decay behavior, $\boldsymbol{P}_{n_g\times n_g}$ is the state transition matrix for the embedded Markov chain that models the goal transitions as jump processes, $\mathbbm{1}_{n_g}$ is a vector of dimension $n_g$ containing all ones, $\boldsymbol{\lambda}$ is the control matrix that controls the excitatory and inhibitory aspects, $\boldsymbol{\xi}$ is a function that encodes the nonlinearity through which human control commands and task features affect the time evolution, and $\sigma$ is a biased sigmoidal nonlinearity given by $\sigma(\boldsymbol{\xi}) = \frac{1}{1 + e^{-\boldsymbol{\xi}}} - 0.5$. 
 
 
 Our design of $\boldsymbol{\xi}$ is informed by what features of the human control input and environment effectively capture the human's underlying intent. We choose the \textit{directedness} of the robot motion towards a goal, the \textit{agreement} between the human commands and robot autonomy, and the \textit{proximity} to a goal. The \textit{directedness} component looks at the shortest straight line path towards a goal $g$, whereas the \textit{agreement} serves as an indicator of how similar (measured as a dot product) the human and autonomy signals are to each other.
@@ -698,27 +698,43 @@ where  $\eta = \frac{\boldsymbol{u}_h^{trans}\cdot(\boldsymbol{x}_{g^i} - \bolds
 At every time-step, constraints on $p^i(t)$ are enforced such that $\boldsymbol{p}(t)$ is a valid probability distribution. 
 The most confident goal $g^*$ is computed as $g^* = \argmax_i  p^i(t)$.
 
-\subsection{\added{Advantages of DFT-based Approach for Assitive Robotics}}\label{ssec:dft_adv}
+\subsection{\added{Field-Theoretic Intent Inference For Assistive Robotics}}\label{ssec:dft_adv}
 \begin{figure}[b]
 	\centering
-	\includegraphics[width = 1.04\hsize]{./figures/inference_comparison.eps}
-	\vspace{-1cm}
-	\caption{\added{Goal inference comparison: (Top Row, Left). The two goals are depicted as blue and red circles. The robot end-effector trajectory is colored in magenta. (Top Row, Right). The simulated user control command profile for translational dimensions. (Bottom Row, Left to Right). Goal probabilities for Memory-Based Prediction (Left), Recursive Bayesian Belief Update (Middle) and DFT-based inference scheme (Right).} }
+	\includegraphics[width = 1.0\hsize]{./figures/inference_comparison_new.eps}
+%	\vspace{-1cm}
+	\caption{\added{Goal inference comparison: (Left to Right). Goal probabilities for Memory-Based Prediction (Left), Recursive Bayesian Belief Update (Middle) and DFT-based inference scheme (Right) and reaching behavior in a scene with two goals. The black boxes in the plots indicated time range during which the control velocity was zeroed. The probabilities do not change much for memory-based approach as the cost function employed is purely distance-based (left). The convergence is towards the stationary and uniform distribution for recursive (middle) and field-theoretic approach (right) respectively.}}
 	\label{fig:dft_inference}
 \end{figure}
-\added{In our work, autonomy's inference of user intent solely relies on user control commands. In the domain of assistive robotics, it is quite often the case that the user input is highly discontinuous (due to fatigue, motor impairments, stoppage for mode switches \textit{et cetera}) due to which it becomes important to reason about belief over goals in the \textit{absence} of useful information. Standard discrete-time recursive belief update equation as implemented in~\cite{jain2018recursive} is}
+\added{In our work, autonomy's inference of user intent solely relies on user control commands. In the domain of assistive robotics, it is quite often the case that the user input is highly discontinuous (due to fatigue, motor impairments, stoppage for mode switches \textit{et cetera}) due to which it becomes important to reason about belief over goals in the \textit{absence} of useful information. }
+
+\added{In the absence of testable information (that is, no control commands issued by the user and not task-level global priors), in accordance to the \textit{maximum entropy principle}, the belief should converge to a uniform distribution. In the absence of $\boldsymbol{u}_h$ Equation~\ref{eq:dft_ii} converges to a uniform distribution mimicking natural forgetting behavior resulting in a more meaningful inference. The rate at which the distribution evolves to a uniform distribution is controlled by the timescale parameter $\tau_1$.}
+
+\added{On the other hand, standard discrete-time recursive belief update equation as implemented in~\cite{jain2018recursive} is}
 \begin{equation*}
 p(g^t |\boldsymbol{u}_h^t) = \eta p(\boldsymbol{u}_h^t | g^t)\sum_{g^{t-1} \in \mathcal{G}}^{}p(g^t | g^{t-1})p(g^{t-1} |\boldsymbol{u}_h^{t-1})\;\;\;\;\;.
 \end{equation*}
-Written in matrix form this becomes
-\begin{equation*}
-\boldsymbol{p}_t = \eta\boldsymbol{p}(\boldsymbol{u}_h | \boldsymbol{g}) \otimes \big[\boldsymbol{P}^{T}\cdot\boldsymbol{p}_{t-1}\big]
-\end{equation*}
-\added{where $\eta$ is the normalization factor, $\otimes$ is the Hadamard product, $\boldsymbol{p}(\boldsymbol{u}_h | \boldsymbol{g})$ is the vector containing the likelihoods for each goal, $\boldsymbol{p}_t$ and $\boldsymbol{p}_{t-1}$ denote the probability distribution over goals at time $t$ and $t-1$ respectively. }
+\added{where $\eta$ is the normalization factor, $\boldsymbol{p}(\boldsymbol{u}_h | g)$ is likelihood function, $p(g^t | g^{t-1})$ is the goal transition probability. 
+In recursive belief update when $\boldsymbol{u}_h = 0$ with the likelihood function to be uniform, it can be shown that the posterior distribution over goals converges to the stationary distribution of the goal transition matrix. The stationary distribution is not necessarily uniform and therefore is counter-intuitive and can introduce unwanted biases in the inference. 
+}
 
-\added{In the absence of testable information (no control commands issued by the user), in accordance to the maximum entropy principle, the belief should converge to a uniform distribution. Instead, in recursive belief update when $\boldsymbol{u}_h = 0$ the likelihood vector is uniform, and it can be shown that the posterior distribution over goals converges to the stationary distribution of $\boldsymbol{P}$. This is counter-intuitive and can introduce unwanted biases in the inference. On the contrary, in the absence of $\boldsymbol{u}_h$ Equation~\ref{eq:dft_ii} converges to a uniform distribution mimicking natural forgetting behavior resulting in a more meaningful inference. DFT-based approach also offers the capability to encode task-level global priors in the `rest state' term. The relative values of $\tau_1$ and $\tau_2$ controls the convergence behavior (whether to uniform distribution or rest state distribution respectively) in the absence of $\boldsymbol{u}_h$.}
-\subsection{Quantitative Comparison of Goal Inference Methods}\label{ssec:dft_comp}
-\added{In order to evaluate the performance of the DFT-based inference approach a point robot simulation-based quantitative comparison to 1) memory-based prediction~\cite{dragan2013policy} and 2) recursive belief updating~\cite{jain2018recursive} was implemented in $\mathbb{R}^3$. The human is modeled as issuing a control command that noisily optimizes a straight-line path towards the intended goal. Signal dropout was simulated by randomly zeroing out control commands. $\boldsymbol{u}_h$ was set to be zero for a significant portion of each trial as well in order to compare the convergence behavior of different approaches. The number of goals varied between three and five and goal transitions were randomly sampled every five to eight time steps. 500 trials were simulated. Inference accuracy is computed as the fraction of total trial time (excluding when $\boldsymbol{u}_h = 0$) for which an algorithm correctly inferred the ground truth. Results for DFT-based inference were comparable to recursive belief updating ($87.46\%$ and $87.43\%$ respectively) and outperformed memory-based prediction significantly ($59.15\%$). Figure~\ref{fig:dft_inference} shows an illustrative example of goal inference using the various methods. One can see that when there is no control command issued unlikes the recursive belief approach, the DFT-based approach converges to the maximum entropy distribution.}
+\added{
+Knowledge of task-level semantics can provide informative global priors that can further improve the accuracy of the inference mechanism. Our field-theoretic approach can encode a task-level global prior in the `rest state' term. For example, in a multi-stage task such as pouring the contents of a cup into a bowl, the initial goal distribution will be biased towards the cup as it is more likely the target that the user would try to reach for. The relative values of $\tau_1$ and $\tau_2$ controls the convergence behavior (whether to uniform distribution or rest state distribution respectively) in the absence of $\boldsymbol{u}_h$.}
+
+%
+%On the contrary, DFT-based approach also offers the capability to encode task-level global priors in the `rest state' term. The relative values of $\tau_1$ and $\tau_2$ controls the convergence behavior (whether to uniform distribution or rest state distribution respectively) in the absence of $\boldsymbol{u}_h$.
+
+\added{In order to evaluate the performance of the field-theoretic inference approach a point robot simulation-based quantitative comparison to 1) memory-based prediction~\cite{dragan2013policy} and 2) recursive belief updating~\cite{jain2018recursive} was implemented in $\mathbb{R}^3$. The human is modeled as issuing a control command that noisily optimizes a straight-line path towards the intended goal. Signal dropout was simulated by randomly zeroing out control commands. Additionally, $\boldsymbol{u}_h$ was set to be zero for a randomly chosen section of each trial in order to compare the convergence behavior of different approaches. The number of goals varied between three and five and goal transitions were randomly sampled every five to eight time steps. 500 trials were simulated. Inference accuracy is computed as the fraction of total trial time (excluding when $\boldsymbol{u}_h = 0$) for which an algorithm correctly inferred the ground truth. Results for DFT-based inference were comparable to recursive belief updating ($87.46\%$ and $87.43\%$ respectively) and outperformed memory-based prediction significantly ($59.15\%$). Figure~\ref{fig:dft_inference} shows an illustrative example of goal inference using the various methods. One can see that when there is no control command issued unlike the recursive belief approach, the field-theoretic approach converges to the maximum entropy uniform distribution.}
+
+
+
+%Written in matrix form this becomes
+%\begin{equation*}
+%\boldsymbol{p}_t = \eta\boldsymbol{p}(\boldsymbol{u}_h | \boldsymbol{g}) \otimes \big[\boldsymbol{P}^{T}\cdot\boldsymbol{p}_{t-1}\big]
+%\end{equation*}
+
+
+
 %Figure~\ref{fig:dft_inference} shows an illustrative comparison of goal inferences using our DFT-based approach and two other Bayesian approaches i) memory-based prediction as implemented in~\cite{dragan2013policy} and ii) recursive belief updating as implemented in~\cite{jain2018recursive}.\footnote{For the memory-based inference scheme we use a straight-line distance based cost function and for the recursive belief update scheme we model the human as an approximately rational agent such that the $p(\boldsymbol{u}_h | g)$ is modeled as a von Mises distribution.}
 %
 %In the scenario shown in Figure~\ref{fig:dft_inference} (top row), the user teleoperates the end-effector in the three translational dimensions. The user initially moves the robot towards the black goal (on the left) and then changes direction to pursue the magenta goal (on the right). Subsequently, the user decides against going towards the magenta goal and decides to pursue the initial black goal by moving the end-effector to the left.
@@ -834,7 +850,7 @@ The objective metrics used for evaluation included the following.
 	\item \textit{Number of disambiguation requests}: The number of times user pressed the disambiguation request button. 
 	\item \textit{Number of button presses}: The sum of \textit{Number of mode switches} and \textit{Number of disambiguation requests}.
 	\item \textit{Skewness}: A higher-order moment used to quantify the asymmetry of any distribution. Used to characterize how much the temporal distribution of disambiguation requests deviates from a uniform distribution. 
-	\item \textit{\added{Task Completion Time}}: \added{Time taken to complete the task successfully and is an indicator of how well the human and autonomy are working together.}
+	\item \textit{\added{Task Completion Time}}: \added{Time taken to complete the task successfully and is an indicator of how well the human and autonomy work together.}
 \end{itemize}
 
 \added{Additionally, at the end of each testing phase, subjective data was gathered via a brief questionnaire. Users were given the following statements regarding the usefulness and capability of the assistance system to rate according to their agreement.
@@ -901,13 +917,13 @@ From Figure~\ref{fig:ha_man_disamb} it is clear that the frequency and density o
 \added{No statistical difference was observed in task completion times between the \textit{Manual} and \textit{Disambiguation} paradigm. However, the variance in the task completion times was lower in \textit{Disambiguation} paradigm indicating that the task performance was more consistent when robot control was performed in the disambiguating control modes chosen by the autonomy. Furthermore, the overall task success was $94.53\%$ (242 out of 256 trials). 10 out of the 14 unsuccessful trials happened during the multi-step task.}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[keepaspectratio, width = 1\hsize ,left]{./figures/task_completion.eps}
-	\caption{Comparison of task completion times between \textit{Disambiguation} and \textit{Manual} Paradigms. \textit{Left:} Grouped by control interfaces. \textit{Right:} Grouped by tasks.}
+	\includegraphics[width = 1\hsize, height=0.35\vsize, ,left]{./figures/task_completion.eps}
+	\caption{Task completion times between \textit{Disambiguation} and \textit{Manual} Paradigms. \textit{Left:} Grouped by control interfaces. \textit{Right:} Grouped by tasks.}
 	\label{fig:task_completion}
 \end{figure}
 
 \noindent{\textbf{User Survey Results:}} 
-\added{Table~\ref{table:survey_results} summarizes the results of the subject survey. Users rated the utility value of the disambiguation paradigm (\textbf{Q1}) fairly high (4.87$\pm$0.95) indicating that task execution was easier during disambiguating trials. User responses strongly validated the effectiveness of the blending-based shared control scheme (\textbf{Q3}, 6.19$\pm$0.75). The responses also showed that subjects liked to operate the robot (\textbf{Q2}) in the disambiguating modes (5.00$\pm$1.15) and overwhelming preferred (\textbf{Q6}) the \textit{Disambiguation} to the \textit{Manual} paradigm. Unsurprisingly, all users felt that it was harder to control the robot using the headarray (\textbf{Q4}) and the utility value of the disambiguation paradigm was highest when using the headarray.(\textbf{Q4}). Only 4 out of the 8 subjects found the \textit{Disambiguation} paradigm to be user-friendly likely due to the lack of transparency in why the autonomy chose the disambiguation mode.}
+\added{Table~\ref{table:survey_results} summarizes the results of the subject survey. Users rated the utility value of the disambiguation paradigm (\textbf{Q1}) fairly high (4.87$\pm$0.95) indicating that task execution was easier during disambiguating trials. User responses strongly validated the effectiveness of the blending-based shared control scheme (\textbf{Q3}, 6.19$\pm$0.75). The responses also showed that subjects liked to operate the robot (\textbf{Q2}) in the disambiguating modes (5.00$\pm$1.15) and overwhelming preferred (\textbf{Q6}) the \textit{Disambiguation} to the \textit{Manual} paradigm. Unsurprisingly, all users felt that it was harder to control the robot using the headarray (\textbf{Q4}) and rated the utility value of the disambiguation paradigm to be higher for robot control with the headarray (\textbf{Q5}). Only four out of the eight subjects found the \textit{Disambiguation} paradigm to be user-friendly (\textbf{Q7}) likely due to the lack of transparency in why the autonomy chose the disambiguation mode.}
 
 \begin{table}[t]
 	\centering
@@ -931,7 +947,7 @@ From Figure~\ref{fig:ha_man_disamb} it is clear that the frequency and density o
 		\hline
 		\textbf{Q6} & Disambiguation & Disambiguation & Disambiguation \\
 		\hline
-		\textbf{Q7} & Disamb/Manual & Disamb/Manual & Disamb/Manual\tablefootnote{4 out of the 8 subjects considered \textit{Disambiguation} paradigm to be more user-friendly than \textit{Manual}.} \\
+		\textbf{Q7} & Disamb/Manual & Disamb/Manual & Disamb/Manual\\
 		
 		\hline
 	\end{tabular}

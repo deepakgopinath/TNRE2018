@@ -73,18 +73,15 @@ for i=3:num_trajectories+2
         %%
         
         
-%         subplot(2,3,4);
-        subplot(1,3,1);
+        subplot(2,3,4);
         plot(pgs_BAYES_ANCA', 'LineWidth', 2.0); grid on;
         xlabel('\bf Time Steps');  ylabel('\bf Goal Probability'); title('\fontsize{8} GOAL PROBABILITIES - Memory');
         ylim([0, 1.0]); % b, r, yellow
-%         subplot(2,3,5);
-        subplot(1,3,2);
+        subplot(2,3,5);
         plot(pgs_BAYES_uh', 'LineWidth', 2.0); grid on;
         xlabel('\bf Time Steps'); title('\fontsize{8} GOAL PROBABILITIES - Recursive');
         ylim([0, 1.0]); % b, r, yellow
-%         subplot(2,3,6);
-        subplot(1,3,3);
+        subplot(2,3,6)
         plot(pgs_DFT', 'LineWidth', 2.0); grid on;
         xlabel('\bf Time Steps');  title('\fontsize{8} GOAL PROBABILITIES - DFT')
         ylim([0, 1.0]);
