@@ -122,7 +122,8 @@ for j=1:len_traj-1
     uh = uh_history_new(:, j);
     [ll_bayes_uh, pgs_BAYES_uh(:, j+1)] = compute_bayes_R3_new(uh, curr_pos, pgs_BAYES_uh(:, j), 1);
     [ll_bayes_anca, pgs_BAYES_ANCA(:, j+1)] = compute_bayes_anca(curr_pos, next_pos, pgs_BAYES_ANCA(:, j), 1.0);
-    pgs_DFT(:, j+1) = compute_p_of_g_dft_R3(uh, curr_pos, pgs_DFT(:, j));
+% %     pgs_DFT(:, j+1) = compute_p_of_g_dft_R3(uh, curr_pos, pgs_DFT(:, j));
+    pgs_DFT(:, j+1) = compute_dft_Q(uh, curr_pos, pgs_DFT(:, j));
 end
 
 %%
@@ -151,28 +152,28 @@ ylim([0, 1.0]); % b, r, yellow
 true_goal_index_history_removed = true_goal_index_history;
 true_goal_index_history_removed(min_ind:max_ind) = -1;
 %%
-[~, bayes_uh_g] = max(pgs_BAYES_uh);
-bayes_uh_g(min_ind:max_ind) = -1;
-bayes_uh_accuracy = sum(bayes_uh_g == true_goal_index_history_removed)/length(true_goal_index_history_removed);
-fprintf('Goal Accuracy BAYES_uh %f\n', bayes_uh_accuracy);
-figure; grid on; hold on;
-plot(true_goal_index_history_removed, 'r', 'LineWidth',  2); hold on;
-plot(bayes_uh_g'+4, 'b','LineWidth',  2);
-
-[~, bayes_anca_g] = max(pgs_BAYES_ANCA);
-bayes_anca_g(min_ind:max_ind) = -1;
-bayes_anca_accuracy = sum(bayes_anca_g == true_goal_index_history_removed)/length(true_goal_index_history_removed);
-fprintf('Goal Accuracy BAYES_anca %f\n', bayes_anca_accuracy);
-plot(true_goal_index_history_removed, 'r', 'LineWidth',  2); hold on;
-plot(bayes_anca_g'+8, 'g','LineWidth',  2);
-
-[~, bayes_dft_g] = max(pgs_DFT);
-bayes_dft_g(min_ind:max_ind) = -1;
-bayes_dft_accuracy = sum(bayes_dft_g == true_goal_index_history_removed)/length(true_goal_index_history_removed);
-fprintf('Goal Accuracy DFT %f\n', bayes_dft_accuracy);
-plot(true_goal_index_history_removed, 'r', 'LineWidth',  2); hold on;
-plot(bayes_dft_g'+12, 'k','LineWidth',  2);
-
+% [~, bayes_uh_g] = max(pgs_BAYES_uh);
+% bayes_uh_g(min_ind:max_ind) = -1;
+% bayes_uh_accuracy = sum(bayes_uh_g == true_goal_index_history_removed)/length(true_goal_index_history_removed);
+% fprintf('Goal Accuracy BAYES_uh %f\n', bayes_uh_accuracy);
+% figure; grid on; hold on;
+% plot(true_goal_index_history_removed, 'r', 'LineWidth',  2); hold on;
+% plot(bayes_uh_g'+4, 'b','LineWidth',  2);
+% 
+% [~, bayes_anca_g] = max(pgs_BAYES_ANCA);
+% bayes_anca_g(min_ind:max_ind) = -1;
+% bayes_anca_accuracy = sum(bayes_anca_g == true_goal_index_history_removed)/length(true_goal_index_history_removed);
+% fprintf('Goal Accuracy BAYES_anca %f\n', bayes_anca_accuracy);
+% plot(true_goal_index_history_removed, 'r', 'LineWidth',  2); hold on;
+% plot(bayes_anca_g'+8, 'g','LineWidth',  2);
+% 
+% [~, bayes_dft_g] = max(pgs_DFT);
+% bayes_dft_g(min_ind:max_ind) = -1;
+% bayes_dft_accuracy = sum(bayes_dft_g == true_goal_index_history_removed)/length(true_goal_index_history_removed);
+% fprintf('Goal Accuracy DFT %f\n', bayes_dft_accuracy);
+% plot(true_goal_index_history_removed, 'r', 'LineWidth',  2); hold on;
+% plot(bayes_dft_g'+12, 'k','LineWidth',  2);
+% 
 
 
 

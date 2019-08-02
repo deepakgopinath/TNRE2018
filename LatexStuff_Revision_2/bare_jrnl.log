@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.3)  28 JUL 2019 13:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.3)  29 JUL 2019 00:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -184,6 +184,7 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
 Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
 ))
+changes-option 'final'
 (/usr/share/texmf/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
@@ -876,29 +877,31 @@ LaTeX Font Info:    Try loading font information for U+bbm on input line 677.
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [4]
 Package epstopdf Info: Source file: <./figures/inference_comparison_new.eps>
-(epstopdf)                    date: 2019-07-28 08:39:16
-(epstopdf)                    size: 82461 bytes
+(epstopdf)                    date: 2019-07-28 19:18:52
+(epstopdf)                    size: 165298 bytes
 (epstopdf)             Output file: <./figures/inference_comparison_new-eps-con
 verted-to.pdf>
-(epstopdf)                    date: 2019-07-28 08:41:41
-(epstopdf)                    size: 24709 bytes
+(epstopdf)                    date: 2019-07-28 19:19:09
+(epstopdf)                    size: 27470 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/inference_compar
 ison_new-eps-converted-to.pdf ./figures/inference_comparison_new.eps>
 (epstopdf)             \includegraphics on input line 704.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/inference_comparison_new-eps-converted-to.pdf, id=31, 1310.8975pt x 
-364.36125pt>
+375.4025pt>
 File: ./figures/inference_comparison_new-eps-converted-to.pdf Graphic file (typ
 e pdf)
  <use ./figures/inference_comparison_new-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/inference_comparison_new-eps-converted-to.pd
 f used on input line 704.
-(pdftex.def)             Requested size: 252.0pt x 70.04106pt.
+(pdftex.def)             Requested size: 252.0pt x 72.16353pt.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 706.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 706.
 
-Underfull \vbox (badness 2189) has occurred while \output is active []
-
- [5 <./figures/inference_comparison_new-eps-converted-to.pdf>]
+[5 <./figures/inference_comparison_new-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./figures/Fig6_New.eps>
 (epstopdf)                    date: 2018-11-13 13:13:38
 (epstopdf)                    size: 392100 bytes
@@ -907,15 +910,15 @@ Package epstopdf Info: Source file: <./figures/Fig6_New.eps>
 (epstopdf)                    size: 89667 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/Fig6_New-eps-con
 verted-to.pdf ./figures/Fig6_New.eps>
-(epstopdf)             \includegraphics on input line 776.
+(epstopdf)             \includegraphics on input line 777.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/Fig6_New-eps-converted-to.pdf, id=44, 1144.275pt x 418.56375pt>
+<./figures/Fig6_New-eps-converted-to.pdf, id=45, 1144.275pt x 418.56375pt>
 File: ./figures/Fig6_New-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/Fig6_New-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/Fig6_New-eps-converted-to.pdf used on input 
-line 776.
+line 777.
 (pdftex.def)             Requested size: 252.0pt x 92.17372pt.
 Package epstopdf Info: Source file: <./figures/Fig7.eps>
 (epstopdf)                    date: 2017-11-28 21:14:42
@@ -925,23 +928,23 @@ Package epstopdf Info: Source file: <./figures/Fig7.eps>
 (epstopdf)                    size: 337764 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/Fig7-eps-convert
 ed-to.pdf ./figures/Fig7.eps>
-(epstopdf)             \includegraphics on input line 782.
+(epstopdf)             \includegraphics on input line 783.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/Fig7-eps-converted-to.pdf, id=45, 1927.2pt x 542.025pt>
+<./figures/Fig7-eps-converted-to.pdf, id=46, 1927.2pt x 542.025pt>
 File: ./figures/Fig7-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/Fig7-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/Fig7-eps-converted-to.pdf used on input line
- 782.
+ 783.
 (pdftex.def)             Requested size: 258.0pt x 72.55818pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 782--783
+Overfull \hbox (6.0pt too wide) in paragraph at lines 783--784
 [][] 
  []
 
 
-Underfull \hbox (badness 5446) in paragraph at lines 793--794
+Underfull \hbox (badness 5446) in paragraph at lines 794--795
 $[]$ \OT1/ptm/m/n/10 (+20) Two kinds of mode switch-ing
  []
 
@@ -956,16 +959,16 @@ rted-to.pdf>
 (epstopdf)                    size: 48799 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/ExperimentBlockD
 iagram-eps-converted-to.pdf ./figures/ExperimentBlockDiagram.eps>
-(epstopdf)             \includegraphics on input line 841.
+(epstopdf)             \includegraphics on input line 842.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/ExperimentBlockDiagram-eps-converted-to.pdf, id=59, 547.04375pt x 44
+<./figures/ExperimentBlockDiagram-eps-converted-to.pdf, id=60, 547.04375pt x 44
 1.65pt>
 File: ./figures/ExperimentBlockDiagram-eps-converted-to.pdf Graphic file (type 
 pdf)
  <use ./figures/ExperimentBlockDiagram-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/ExperimentBlockDiagram-eps-converted-to.pdf 
-used on input line 841.
+used on input line 842.
 (pdftex.def)             Requested size: 252.0021pt x 203.45123pt.
 Package epstopdf Info: Source file: <./figures/Fig8_New.eps>
 (epstopdf)                    date: 2018-11-12 21:44:49
@@ -975,15 +978,15 @@ Package epstopdf Info: Source file: <./figures/Fig8_New.eps>
 (epstopdf)                    size: 10319 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/Fig8_New-eps-con
 verted-to.pdf ./figures/Fig8_New.eps>
-(epstopdf)             \includegraphics on input line 875.
+(epstopdf)             \includegraphics on input line 876.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/Fig8_New-eps-converted-to.pdf, id=60, 791.95876pt x 477.785pt>
+<./figures/Fig8_New-eps-converted-to.pdf, id=61, 791.95876pt x 477.785pt>
 File: ./figures/Fig8_New-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/Fig8_New-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/Fig8_New-eps-converted-to.pdf used on input 
-line 875.
+line 876.
 (pdftex.def)             Requested size: 252.0pt x 152.02676pt.
 Package epstopdf Info: Source file: <./figures/Fig9.eps>
 (epstopdf)                    date: 2017-12-01 04:02:12
@@ -993,15 +996,15 @@ Package epstopdf Info: Source file: <./figures/Fig9.eps>
 (epstopdf)                    size: 215176 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/Fig9-eps-convert
 ed-to.pdf ./figures/Fig9.eps>
-(epstopdf)             \includegraphics on input line 882.
+(epstopdf)             \includegraphics on input line 883.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/Fig9-eps-converted-to.pdf, id=61, 716.6775pt x 541.02126pt>
+<./figures/Fig9-eps-converted-to.pdf, id=62, 716.6775pt x 541.02126pt>
 File: ./figures/Fig9-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/Fig9-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/Fig9-eps-converted-to.pdf used on input line
- 882.
+ 883.
 (pdftex.def)             Requested size: 258.0pt x 194.7675pt.
  [7 <./figures/ExperimentBlockDiagram-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./figures/task_completion.eps>
@@ -1013,15 +1016,15 @@ Package epstopdf Info: Source file: <./figures/task_completion.eps>
 (epstopdf)                    size: 8014 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/task_completion-
 eps-converted-to.pdf ./figures/task_completion.eps>
-(epstopdf)             \includegraphics on input line 920.
+(epstopdf)             \includegraphics on input line 921.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/task_completion-eps-converted-to.pdf, id=68, 626.34pt x 382.42876pt>
+<./figures/task_completion-eps-converted-to.pdf, id=69, 626.34pt x 382.42876pt>
 File: ./figures/task_completion-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figures/task_completion-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/task_completion-eps-converted-to.pdf used on
- input line 920.
-(pdftex.def)             Requested size: 252.00336pt x 128.91533pt.
+ input line 921.
+(pdftex.def)             Requested size: 252.00336pt x 157.06522pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1038,7 +1041,7 @@ Package epstopdf Info: Source file: <./figures/Fig11.eps>
 ted-to.pdf ./figures/Fig11.eps>
 (epstopdf)             \includegraphics on input line 970.
 Package epstopdf Info: Output file is already uptodate.
- <./figures/Fig11-eps-converted-to.pdf, id=86, 619.31375pt x 257.96375pt>
+ <./figures/Fig11-eps-converted-to.pdf, id=87, 619.31375pt x 257.96375pt>
 File: ./figures/Fig11-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/Fig11-eps-converted-to.pdf>
@@ -1058,11 +1061,11 @@ acker,
 
  [10] (./bare_jrnl.aux) ) 
 Here is how much of TeX's memory you used:
- 14529 strings out of 495028
- 246642 string characters out of 6181497
- 461113 words of memory out of 5000000
- 17054 multiletter control sequences out of 15000+600000
- 68997 words of font info for 343 fonts, out of 8000000 for 9000
+ 14552 strings out of 495028
+ 246970 string characters out of 6181497
+ 460965 words of memory out of 5000000
+ 17068 multiletter control sequences out of 15000+600000
+ 70965 words of font info for 351 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
  38i,20n,51p,10414b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/deepak/.texmf-var/fonts/pk/ljfour/public/bbm/b
@@ -1076,21 +1079,21 @@ ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type
 c/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cmextra/cmmib5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cmextra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
-es/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bare_jrnl.pdf (10 pages, 1160918 bytes).
+nts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on bare_jrnl.pdf (10 pages, 1163250 bytes).
 PDF statistics:
  180 PDF objects out of 1000 (max. 8388607)
  121 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 32809 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 33833 words of extra memory for PDF output out of 35830 (max. 10000000)
 

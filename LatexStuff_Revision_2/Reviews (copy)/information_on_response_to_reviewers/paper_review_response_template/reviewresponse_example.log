@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.3)  28 JUL 2019 12:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.3)  29 JUL 2019 00:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -672,7 +672,7 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 88--88
  []
 
 
-Underfull \vbox (badness 3965) has occurred while \output is active []
+Underfull \vbox (badness 3849) has occurred while \output is active []
 
  [2]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 111.
@@ -682,25 +682,19 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 111.
  (./reviewresponse_example.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 111.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 111.
+Package rerunfilecheck Info: File `reviewresponse_example.out' has not changed.
 
-
-Package rerunfilecheck Warning: File `reviewresponse_example.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `reviewresponse_example.out':
-(rerunfilecheck)             Before: 9AB4FC0230EC9878965D536121680D3C;331
-(rerunfilecheck)             After:  8C265B67A76806FC9933447F0819F5F2;377.
+(rerunfilecheck)             Checksum: 8C265B67A76806FC9933447F0819F5F2;377.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 111.
  ) 
 Here is how much of TeX's memory you used:
- 14453 strings out of 495028
- 239314 string characters out of 6181497
- 316629 words of memory out of 5000000
- 17354 multiletter control sequences out of 15000+600000
+ 14454 strings out of 495028
+ 239325 string characters out of 6181497
+ 316627 words of memory out of 5000000
+ 17355 multiletter control sequences out of 15000+600000
  21327 words of font info for 50 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 62i,11n,57p,635b,365s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,57p,639b,365s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
@@ -708,10 +702,10 @@ fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
 uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
 
-Output written on reviewresponse_example.pdf (3 pages, 80153 bytes).
+Output written on reviewresponse_example.pdf (3 pages, 79849 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 76 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  9 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

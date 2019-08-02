@@ -2,10 +2,11 @@ function [pg] = compute_p_of_g_dft_R3( uh, xr, pg )
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
     global ng delta_t goal_transition_P;
-    tau = 10; %10
+    tau1 = 10; %10
+    tau2 = 10;
     h = 1/ng;
     rest_state = h*ones(ng, 1);
-%     rest_state= [0.7;0.2;0.1];
+    
 %     rest_state = rand(3,1);
 %     rest_state = rest_state/sum(rand_state);
 %     disp(rest_state);
@@ -19,7 +20,7 @@ function [pg] = compute_p_of_g_dft_R3( uh, xr, pg )
     lambda = 200*eye(ng) + lambda; %200
 %     disp(curr_pg)
 %     dpgdt = (-1/tau)*goal_transition_P'*pg + lambda*sigmoid(curr_pg); %ODE - Dynamics neural field. 
-    dpgdt = (-1/tau)*goal_transition_P'*pg + rest_state/(tau) + lambda*sigmoid(curr_pg); %ODE - Dynamics neural field. 
+    dpgdt = (-1/tau1)*goal_transition_P'*pg + rest_state/(tau2) + lambda*sigmoid(curr_pg); %ODE - Dynamics neural field. 
 %     disp((1/tau)*goal_transition_P'*pg);
 %     disp('######');
 %     disp(rest_state/(tau));
